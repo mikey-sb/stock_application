@@ -1,11 +1,11 @@
 import React from 'react'
 
-const StocksList = () => {
+const Profile = () => {
     return (
         <div>
-            
+            <h1>PROFILE</h1>
         </div>
     )
 }
 
-export default StocksList
+export default Profile

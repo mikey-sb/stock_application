@@ -1,0 +1,51 @@
+.nav-ul {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    list-style: none;
+}
+
+.ticker-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+   
+    max-height: 50px;
+}
+
+.ticker-container, .ticker-container > ul {
+    display: inline-block;
+    /* flex-flow: row wrap;
+    justify-content: space-evenly; */   
+    list-style: none;
+}
+
+
+.ticker-container > ul > li {
+    padding: 2px;
+    float: left;
+}
+
+.nav-wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+.logo-container {
+    grid-column: 1 / 3 ;
+    grid-row: 1;
+    height: 50px;
+    margin-left: 20px;
+}
+
+.nav-container {
+    grid-column: 2 / 8;
+    grid-row: 1;
+    position: relative;
+    
+}
