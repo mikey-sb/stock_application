@@ -34,9 +34,9 @@ function App() {
     {allStock ? <NavBar allStock={allStock}/> : null}
     
     <Switch>
-    {allStock ? <Route exact path="/" component={Home} allStock={allStock}/> : null}
-    {allStock ? <Route exact path="/profile" component={Profile} allStock={allStock}/>: null}
-    {allStock ? <Route exact path="/stocks" component={Stocks} allStock={allStock}/>: null}
+    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks allStock={allStock}/>}/> : null }
 
     </Switch>
     </>

@@ -6,6 +6,9 @@ const Home = ({allStock}) => {
         
         <div className="home-container">
            <h1>HOME</h1>
+
+           {allStock["Meta Data"]["1. Information"]}
+
         </div>
         
         </>
