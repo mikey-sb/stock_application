@@ -1,13 +1,20 @@
 import React, {useState, useEffect} from 'react'
-import HighCharts from 'highcharts'
+import HighCharts, { chart } from 'highcharts'
 import HighchartsReact from 'highcharts-react-official';
 const StockChart = ({allStock}) => {
    
     const options = {
+        title: {
+            text: `${allStock["Meta Data"]["2. Symbol"]}`
+          },
+        
         series: [{
             name: 'Profit',
             data: []
         }]
+    }
+    const chartTitle = {
+        text: 'Portfolio'
     }
     const setChartOptions = () => {
         if(allStock){
@@ -22,7 +29,7 @@ const StockChart = ({allStock}) => {
     const renderChart = () => {
         if(allStock){
             setChartOptions()
-            return <HighchartsReact highcharts={HighCharts} options={options} />
+            return <HighchartsReact highcharts={HighCharts} options={options} title={chartTitle}/>
         }
     }
     // console.log(allStock["Time Series (5min)"])
