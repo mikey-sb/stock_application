@@ -5,9 +5,14 @@ const StockChart = ({allStock}) => {
    
     const options = {
         title: {
-            text: `${allStock["Meta Data"]["2. Symbol"]}`
+            text: 'Portfolio Value'
           },
-        
+        xAxis: {
+            categories: [],
+            labels: {
+                rotation: 90
+            }
+        },
         series: [{
             name: 'Profit',
             data: []
@@ -19,13 +24,23 @@ const StockChart = ({allStock}) => {
     const setChartOptions = () => {
         if(allStock){
             options["series"][0]["name"] = allStock["Meta Data"]["2. Symbol"]
-            for(let banana in allStock["Time Series (5min)"]){
-                let pricePoint = allStock["Time Series (5min)"][banana]["1. open"]
+
+            let i = 0
+
+            //Add all times to array, then go through and remove every n time to display on the x axis with enough space
+            let tempTimeArray = []
+            let tempValuesArray = []
+
+            for(let key in allStock["Time Series (5min)"]){
+                let pricePoint = allStock["Time Series (5min)"][key]["1. open"]
+                let timeAxis = key.substring(10, key.length-3)
                 options["series"][0]["data"].push(Number(pricePoint))
+                options["xAxis"]["categories"].push(timeAxis)
+                console.log(options["xAxis"]["categories"])
+                }
             }
-            console.log(options)
+            
         }
-    }
     const renderChart = () => {
         if(allStock){
             setChartOptions()
