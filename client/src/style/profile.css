@@ -1,0 +1,36 @@
+.profile-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+.profile-pie {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.profile-info {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.profile-wallet {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.profile-change {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.profile-performance {
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.profile-all-stock {
+    grid-column: 1 / 4;
+    grid-row: 4;
+}
