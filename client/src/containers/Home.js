@@ -1,3 +1,5 @@
+import StockChart from '../components/StockChart'
+
 const Home = ({allStock}) => {
     console.log(allStock)
     return (
@@ -7,7 +9,7 @@ const Home = ({allStock}) => {
         <div className="home-container">
            <h1>HOME</h1>
 
-           {allStock["Meta Data"]["1. Information"]}
+           < StockChart allStock={allStock} />
 
         </div>
         
@@ -16,3 +18,7 @@ const Home = ({allStock}) => {
 }
 
 export default Home
+
+
+
+
