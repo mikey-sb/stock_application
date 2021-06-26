@@ -3,7 +3,7 @@ import { updateStock, postStock } from '../../SharesServices';
 
 const Wallet = ({allStock}) => {
 
-    const [total, setTotal] = useState(null);
+    const [total, setTotal] = useState([]);
     const [inputNumber, setInputNumber] = useState(null)
     // const [stock, setStock] = useState("")
     // const [PurchasedPrice, setPurchasedPrice] = useState(0)
@@ -22,20 +22,20 @@ const Wallet = ({allStock}) => {
     const withdraw = () => {
         setTotal(total - Number(inputNumber))
     }
-    const addCash = (total) => {
-        setTotal(total)  //add cash should hold on the whole object not a number
+    // const addCash = (total) => {
+    //     setTotal(total)  //add cash should hold on the whole object not a number
 
-    }
+    // }
 
 
-    const handleOnSubmit = (event) => {
-        event.preventDefault()
-        console.log()
-        postStock(allStock).then((data) => {
-            addCash(data)
-            }
-        )
-    }
+    // const handleOnSubmit = (event) => {
+    //     event.preventDefault()
+    //     console.log()
+    //     postStock(allStock).then((data) => {
+    //         addCash(data)
+    //         }
+    //     )
+    // }
     return (
         <form onSubmit={handleOnSubmit} method="post">
             <input type="number" name="total_cash" onChange={event => {setInputNumber(event.target.value)}} />
