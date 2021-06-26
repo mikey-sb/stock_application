@@ -1,5 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
 import ProfileAllStock from '../components/profile/ProfileAllStock'
 import ProfileChange from '../components/profile/ProfileChange'
 import ProfileInfo from '../components/profile/ProfileInfo'
@@ -8,9 +7,6 @@ import ProfilePie from '../components/profile/ProfilePie'
 import ProfileWallet from '../components/profile/ProfileWallet'
 
 import '../style/profile.css'
-=======
-import Wallet from '../components/profile_components/Wallet.js'
->>>>>>> profile/wallet
 
 const Profile = ({allStock}) => {
 
@@ -20,7 +16,6 @@ const Profile = ({allStock}) => {
     //     setAllStock(total)
     // }
     return (
-<<<<<<< HEAD
         <>
         <div className = "profile-wrapper">
         <div className = "profile-all-stock">
@@ -41,11 +36,6 @@ const Profile = ({allStock}) => {
         
         <div className = "profile-pie">
             <ProfilePie />
-=======
-        <div>
-            <h1>PROFILE</h1>
-            <Wallet allStock={allStock}/>
->>>>>>> profile/wallet
         </div>
 
         <div className = "profile-wallet">
