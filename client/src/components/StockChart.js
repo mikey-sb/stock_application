@@ -1,4 +1,4 @@
-import HighCharts, { chart } from 'highcharts'
+import HighCharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official';
 const StockChart = ({allStock}) => {
    
