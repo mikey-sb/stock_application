@@ -7,7 +7,7 @@ import PriceTicker from './PriceTicker'
 
 const NavBar = ({allStock}) => {
 
-    console.log({allStock})
+    // console.log({allStock})
     return (
         <>
         <div className="nav-wrapper">

@@ -26,7 +26,7 @@ function App() {
       getStock()
   }, [])
 
-  console.log({allStock})
+  // console.log({allStock})
   
   return (
     <Router>

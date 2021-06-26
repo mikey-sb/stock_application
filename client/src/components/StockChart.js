@@ -31,15 +31,15 @@ const StockChart = ({allStock}) => {
             let tempTimeArray = []
             let tempValuesArray = []
 
-            for(let key in allStock["Time Series (5min)"]){
+            let reversedTimeSeries = Object.keys(allStock["Time Series (5min)"]).reverse();
+
+            for(let key of reversedTimeSeries){
                 let pricePoint = allStock["Time Series (5min)"][key]["1. open"]
                 let timeAxis = key.substring(10, key.length-3)
                 options["series"][0]["data"].push(Number(pricePoint))
                 options["xAxis"]["categories"].push(timeAxis)
-                console.log(options["xAxis"]["categories"])
-                }
             }
-            
+            }
         }
     const renderChart = () => {
         if(allStock){
@@ -47,13 +47,12 @@ const StockChart = ({allStock}) => {
             return <HighchartsReact highcharts={HighCharts} options={options} title={chartTitle}/>
         }
     }
-    // console.log(allStock["Time Series (5min)"])
     return (
         <>
             <div className="data-container">
             <ul>
                 <li>{allStock ? allStock["Meta Data"]["2. Symbol"] : null}</li>
-                <li>{allStock ? allStock["Time Series (5min)"]["2021-06-23 20:00:00"]["1. open"] : null}</li>
+                {/* <li>{allStock ? allStock["Time Series (5min)"]["2021-06-23 20:00:00"]["1. open"] : null}</li> */}
             </ul>
             {renderChart()}
             </div>
