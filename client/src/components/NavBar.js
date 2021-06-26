@@ -5,14 +5,17 @@ import {Link} from 'react-router-dom'
 import PriceTicker from './PriceTicker'
 
 
+
 const NavBar = ({allStock}) => {
 
     // console.log({allStock})
     return (
         <>
+        
+        
         <div className="nav-wrapper">
         <div className="logo-container">
-            <h3>Stock App</h3>          
+           <h3>Stock App</h3>       
         </div>
 
         <div className="nav-container">      
@@ -26,6 +29,9 @@ const NavBar = ({allStock}) => {
                 <li>
                     <Link to="/stocks">Stocks</Link>
                 </li>
+                <li>
+              
+                </li>
             </ul>
         </div>
         </div>
@@ -33,8 +39,14 @@ const NavBar = ({allStock}) => {
         {/* <PriceTicker allStock={allStock}/> */}
         
         </div>
+      
         </>
     )
 }
 
 export default NavBar
+
+
+  
+
+
