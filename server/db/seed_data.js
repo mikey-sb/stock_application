@@ -18,6 +18,14 @@ db.stocks.insertMany(
     ]
 )
 
+db.wallet.insertMany([
+    {
+        total_cash: 500,
+        profit: 0
+    }
+])
+
+
 
 // 20 Amazon 
 // 50 Tesla 
