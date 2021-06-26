@@ -1,14 +1,16 @@
 import React from 'react'
 
-const SearchBar = ({handleStockChange}) => {
+const SearchBar = ({setSelectedStock}) => {
 
-
-
-
+    const stockIsChanging = (event) => {
+        event.preventDefault();
+        let searchedStock = event.target[0].value
+        setSelectedStock(searchedStock)
+    }
 
     return (
         <div>
-            <form className="form-container" onSubmit={handleStockChange}>
+            <form className="form-container" onSubmit={stockIsChanging}>
 
                 <label htmlFor="name">Symbol:</label>
 

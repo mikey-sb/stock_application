@@ -1,32 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
 import SearchDisplay from '../components/SearchDisplay'
 import {useState} from 'react'
 
-const Stocks = ({selectedStock, setSelectedStock, viewSelectedStock}) => {
+const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo}) => {
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    useEffect(() => {
+        renderStockInfo()
+    }, [selectedStockInfo])
 
-    
-
-    
-    const handleStockChange = function(e) {
-        e.preventDefault();
-        setSelectedStock(e.target[0].value);
-        setIsSubmitted(true);
-        
-     }
-    
-  console.log({viewSelectedStock})
+  const renderStockInfo = () => {
+      if(selectedStockInfo){
+        return <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
+      }
+  }
 
 
      return (
         <div>
            
                 <>
-                    <SearchBar handleStockChange={handleStockChange}/>
+                    <SearchBar setSelectedStock={setSelectedStock}/>
                     
-                    {isSubmitted ? <SearchDisplay viewSelectedStock={viewSelectedStock}/> : null }
+                    {renderStockInfo()}
                 </>
                 
             
