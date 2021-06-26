@@ -12,9 +12,12 @@ function App() {
 
   const [allStock, setAllStock] = useState(null);
 
+  const apiKey = '6OYBENRW75CQHHNZ'
+  const interval = '60min'
+
 
   const getStock = () => {
-          fetch('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=6OYBENRW75CQHHNZ')
+          fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
           .then(res => res.json())
           .then(data =>setAllStock(data))
           .catch((err) => {

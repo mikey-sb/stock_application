@@ -51,7 +51,7 @@ const StockChart = ({allStock}) => {
         <>
             <div className="data-container">
             <ul>
-                <li>{allStock ? allStock["Meta Data"]["2. Symbol"] : null}</li>
+                {/* <li>{allStock ? allStock["Meta Data"]["2. Symbol"] : null}</li> */}
                 {/* <li>{allStock ? allStock["Time Series (5min)"]["2021-06-23 20:00:00"]["1. open"] : null}</li> */}
             </ul>
             {renderChart()}
