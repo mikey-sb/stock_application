@@ -12,6 +12,10 @@ function App() {
 
   const [allStock, setAllStock] = useState(null);
 
+  const [selectedStock, setSelectedStock] = useState('');
+
+  const [viewSelectedStock, setViewSelectedStock] = useState(null);
+
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
 
