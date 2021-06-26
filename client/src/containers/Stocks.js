@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
 import SearchDisplay from '../components/SearchDisplay'
+import CandleStickChart from '../components/CandleStickChart'
 import {useState} from 'react'
 
 const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo}) => {
@@ -11,7 +12,12 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
 
   const renderStockInfo = () => {
       if(selectedStockInfo){
-        return <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
+        return (
+                <>
+                <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
+                <CandleStickChart allStock={selectedStockInfo} />
+                </>
+        )
       }
   }
 

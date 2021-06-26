@@ -1,4 +1,5 @@
 import React from 'react'
+import CandleStickChart from './CandleStickChart'
 
 const SearchDisplay = ({selectedStockInfo, selectedStock}) => {
 
@@ -11,6 +12,9 @@ const renderSelectedStockInfo = () => {
             <>
         <li>{selectedStockInfo["Meta Data"]["2. Symbol"]}</li>
         <li>{selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}</li>
+        <li>
+        {/* <CandleStickChart allStock={selectedStockInfo} /> */}
+        </li>
         </>
         )
     }

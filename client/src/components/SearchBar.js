@@ -10,15 +10,34 @@ const SearchBar = ({setSelectedStock}) => {
 
     return (
         <div>
-            <form className="form-container" onSubmit={stockIsChanging}>
+            <form className="form-container" id="stockForm" onSubmit={stockIsChanging}>
 
-                <label htmlFor="name">Symbol:</label>
+                {/* <label htmlFor="name">Symbol:</label>
 
-                <input type="text" id="stockSearch" name="stockSearch" placeholder="IBM" required/>
+                <input type="text" id="stockSearch" name="stockSearch" placeholder="IBM"/>
+
+                <label for="stocks">Choose a Stock:</label> */}
+
+                <select name="stocks" id="stockSelect">
+                    <option value="IBM">IBM</option>
+                    <option value="AAPL">AAPL</option>
+                    <option value="GOOG">GOOG</option>
+                    <option value="AMZN">AMZN</option>
+                    <option value="MSFT">MSFT</option>
+                    <option value="TSLA">TSLA</option>
+                    <option value="TSM">TSM</option>
+                    <option value="NVDA">NVDA</option>
+                    <option value="JPM">JPM</option>
+                    <option value="MA">MA</option>
+                    <option value="PYPL">PYPL</option>
+                </select>
 
                 <input type="submit" value="Search" id="save"/>
 
             </form>
+
+            
+
             
         </div>
     )
