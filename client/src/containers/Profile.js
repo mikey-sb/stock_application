@@ -11,7 +11,7 @@ const Profile = ({allStock}) => {
     return (
         <div>
             <h1>PROFILE</h1>
-            <Wallet allStock={allStock} addCash={addCash}/>
+            <Wallet allStock={allStock}/>
         </div>
     )
 }
