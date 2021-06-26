@@ -1,11 +1,17 @@
 import React from 'react'
-import wallet from '../components/profile_components/wallet'
+import Wallet from '../components/profile_components/Wallet.js'
 
-const Profile = () => {
+const Profile = ({allStock}) => {
+
+
+    // const addCash = (total) => {
+    //     console.log(total)
+    //     setAllStock(total)
+    // }
     return (
         <div>
             <h1>PROFILE</h1>
-            <wallet />
+            <Wallet allStock={allStock} addCash={addCash}/>
         </div>
     )
 }
