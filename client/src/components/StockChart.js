@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from 'react'
 import HighCharts, { chart } from 'highcharts'
 import HighchartsReact from 'highcharts-react-official';
 const StockChart = ({allStock}) => {
