@@ -16,7 +16,7 @@ function App() {
 
   const [viewSelectedStock, setViewSelectedStock] = useState(null);
 
-  const stockSymbolArray = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'FB', 'TSLA', 'BABA', 'TSM', 'V', 'NVDA']
+  //? const stockSymbolArray = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'FB', 'TSLA', 'BABA', 'TSM', 'V', 'NVDA']
 
   const getStock = () => {
           fetch('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=6OYBENRW75CQHHNZ')
@@ -33,18 +33,19 @@ function App() {
   const sym =  selectedStock
 
   const getSelectedStock = () => {
-    
     fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${sym}&interval=5min&apikey=BYBIX6SQ25IPZAUH`)
     .then(res => res.json())
     .then(data =>setViewSelectedStock(data))
     .catch((err) => {
-        console.log(err)
+      console.log(err)
     })
   }
-
   useEffect(() => {
     getSelectedStock()
   }, [sym])
+
+
+  
 
   
   return (

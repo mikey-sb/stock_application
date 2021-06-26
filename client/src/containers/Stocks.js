@@ -19,19 +19,19 @@ const Stocks = ({selectedStock, setSelectedStock, viewSelectedStock}) => {
     
   console.log({viewSelectedStock})
 
-    // const isFormSubmitted = isSubmitted
 
      return (
-
         <div>
-            {isSubmitted
-            ? <SearchBar handleStockChange={handleStockChange}/>
-            : <><SearchBar handleStockChange={handleStockChange}/>
-            <SearchDisplay viewSelectedStock={viewSelectedStock}/></>}
+           
+                <>
+                    <SearchBar handleStockChange={handleStockChange}/>
+                    
+                    {isSubmitted ? <SearchDisplay viewSelectedStock={viewSelectedStock}/> : null }
+                </>
+                
+            
         </div>
-
      )
-
 }
 
 export default Stocks
