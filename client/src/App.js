@@ -31,7 +31,7 @@ function App() {
   return (
     <Router>
     <>
-    {/* {allStock ? <NavBar allStock={allStock}/> : null} */}
+    {allStock ? <NavBar allStock={allStock}/> : null}
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
