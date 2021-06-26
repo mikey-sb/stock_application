@@ -6,15 +6,11 @@ import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-
-
 function App() {
 
   const [allStock, setAllStock] = useState(null);
-
   const [selectedStock, setSelectedStock] = useState('');
-
-  const [viewSelectedStock, setViewSelectedStock] = useState(null);
+  const [selectedStockInfo, setSelectedStockInfo] = useState(null)
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -32,23 +28,18 @@ function App() {
       getStock()
   }, [])
 
-  const sym =  selectedStock
-
-  const getSelectedStock = () => {
-    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${sym}&interval=5min&apikey=BYBIX6SQ25IPZAUH`)
+  const getSelectedStockInfo = () => {
+    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=BYBIX6SQ25IPZAUH`)
     .then(res => res.json())
-    .then(data =>setViewSelectedStock(data))
+    .then(data =>setSelectedStockInfo(data))
     .catch((err) => {
       console.log(err)
     })
   }
+
   useEffect(() => {
-    getSelectedStock()
-  }, [sym])
-
-
-  
-
+    getSelectedStockInfo()
+  }, [selectedStock])
   
   return (
     <Router>
@@ -58,7 +49,7 @@ function App() {
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks allStock={allStock} selectedStock={selectedStock} setSelectedStock={setSelectedStock} viewSelectedStock={viewSelectedStock}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo}/>}/> : null }
 
     </Switch>
     </>

@@ -30,7 +30,7 @@ const NavBar = ({allStock}) => {
         </div>
         </div>
         <div className="ticker-container-nav">
-        <PriceTicker allStock={allStock}/>
+        {/* <PriceTicker allStock={allStock}/> */}
         
         </div>
         </>
