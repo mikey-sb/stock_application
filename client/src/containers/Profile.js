@@ -4,17 +4,11 @@ import ProfileChange from '../components/profile/ProfileChange'
 import ProfileInfo from '../components/profile/ProfileInfo'
 import ProfilePerformance from '../components/profile/ProfilePerformance'
 import ProfilePie from '../components/profile/ProfilePie'
-import Wallet from '../components/profile_components/Wallet'
+import Wallet from '../components/Wallet'
 
 import '../style/profile.css'
 
 const Profile = () => {
-<<<<<<< Updated upstream
-=======
-
-    
-
->>>>>>> Stashed changes
     return (
         <>
         <div className = "profile-wrapper">

@@ -46,7 +46,7 @@ const Wallet = () => {
     //         addCash(data)
     //         }
     //     )
-    }
+    
     return (
         <form onSubmit={handleOnSubmit} method="post">
             <input type="number" name="total_cash" onChange={event => {setInputNumber(event.target.value)}} />
