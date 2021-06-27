@@ -36,7 +36,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
 
   const renderBuyForm = () => {
     if(buyButtonClicked === true){
-        console.log(buyButtonClicked)
+        // console.log(buyButtonClicked)
         return(
             <>
             <BuyStockForm selectedStockInfo={selectedStockInfo}/>
