@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-
 const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
 
     const [amountOfShares, setAmountOfShares] = useState(1)
