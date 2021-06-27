@@ -39,7 +39,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
         console.log(buyButtonClicked)
         return(
             <>
-            <BuyStockForm/>
+            <BuyStockForm selectedStockInfo={selectedStockInfo}/>
             </>
         )
     }
