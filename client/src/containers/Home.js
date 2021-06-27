@@ -1,18 +1,30 @@
 import StockChart from '../components/StockChart'
 import CandleStickChart from '../components/CandleStickChart'
+import '../style/home.css'
+import NewsFeed from '../components/NewsFeed'
 
 const Home = ({allStock}) => {
     console.log(allStock)
     return (
         <>
         
-        
+        <h1>HOME</h1>
         <div className="home-container">
-           <h1>HOME</h1>
 
-           < StockChart allStock={allStock} />
            
-           < CandleStickChart allStock={allStock} />
+           
+            <div className="portfolio-value-container">
+                < StockChart allStock={allStock} />
+            </div>
+           
+            <div className="news-feed-container">
+                < NewsFeed />
+            </div>
+
+            <div className="home-profile-container">
+                <h1>Home Profile</h1>
+            </div>
+           {/* < CandleStickChart allStock={allStock} /> */}
 
         </div>
         
