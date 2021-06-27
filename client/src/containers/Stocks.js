@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
 import SearchDisplay from '../components/SearchDisplay'
 import CandleStickChart from '../components/CandleStickChart'
+import StockGainer from '../components/StockGainer'
 import {useState} from 'react'
 
-const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo}) => {
+const Stocks = ({selectedStock, setSelectedStock, selectedStockInfo, yahooStock}) => {
 
     useEffect(() => {
         renderStockInfo()
@@ -16,6 +17,8 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <>
                 <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
                 <CandleStickChart allStock={selectedStockInfo} />
+                
+                
                 </>
         )
       }
@@ -29,6 +32,8 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                     <SearchBar setSelectedStock={setSelectedStock}/>
                     
                     {renderStockInfo()}
+
+                    {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null}
                 </>
                 
             

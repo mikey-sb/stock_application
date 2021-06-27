@@ -39,8 +39,11 @@ const CandleStickChart = ({allStock}) => {
             
 
         for (let i=0; i < dataLength; i += 1) {
+
+                let date = new Date(time_series_array[i]);
+                let time_ms = date.getTime();
             ohlc.push([
-                time_series_array[i], // the date
+                Number(time_ms), // the date
                 Number(data_array[i]['1. open']), // open
                 Number(data_array[i]['2. high']), // high
                 Number(data_array[i]['3. low']), // low
@@ -50,7 +53,7 @@ const CandleStickChart = ({allStock}) => {
             
 
             volume.push([
-                time_series_array[i], // the date
+                Number(time_ms), // the date
                 Number(data_array[i]['5. volume']), // the volume
             ]);
         }
