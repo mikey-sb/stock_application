@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-const BuyStockForm = ({selectedStockInfo}) => {
+const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
 
     const [amountOfShares, setAmountOfShares] = useState(1)
 
@@ -28,7 +28,8 @@ const BuyStockForm = ({selectedStockInfo}) => {
             "price": priceOfBuy,
             "amount": numOfStock
         }
-        
+        updateBoughtStocks(purchaseRecord)
+
     }
 
     return (
