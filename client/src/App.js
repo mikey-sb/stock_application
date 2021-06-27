@@ -64,7 +64,7 @@ useEffect(() => {
   return (
     <Router>
     <>
-    {allStock ? <NavBar allStock={allStock}/> : null}
+    {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
