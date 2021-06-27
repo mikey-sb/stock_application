@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaArrowUp } from 'react-icons/fa';
 import { FaArrowDown } from 'react-icons/fa';
+import { IconContext } from "react-icons";
 import "../style/ticker.css"
 
 const PriceTicker = ({yahooStock}) => {
@@ -14,9 +15,15 @@ const PriceTicker = ({yahooStock}) => {
                     "change-li, change-li-positive" 
                     : "change-li, change-li-negative"}>
                     {quote.regularMarketChangePercent.toFixed(2)}%
-                    {quote.regularMarketChangePercent > 0 ?
-                    <FaArrowUp /> : <FaArrowDown />}
                 </li>
+
+                {quote.regularMarketChangePercent > 0 ?
+                    <li className="change-li-positive">
+                        <FaArrowUp />
+                    </li> 
+                    : <li className="change-li-negative">
+                        <FaArrowDown />
+                    </li>}     
             </ul>
         )
         })
