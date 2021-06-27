@@ -8,13 +8,10 @@ import ProfileWallet from '../components/profile/ProfileWallet'
 
 import '../style/profile.css'
 
-const Profile = ({allStock}) => {
+const Profile = () => {
 
 
-    // const addCash = (total) => {
-    //     console.log(total)
-    //     setAllStock(total)
-    // }
+    
     return (
         <>
         <div className = "profile-wrapper">
