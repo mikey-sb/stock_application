@@ -1,14 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProfileAllStock from '../components/profile/ProfileAllStock'
 import ProfileChange from '../components/profile/ProfileChange'
 import ProfileInfo from '../components/profile/ProfileInfo'
 import ProfilePerformance from '../components/profile/ProfilePerformance'
 import ProfilePie from '../components/profile/ProfilePie'
-import ProfileWallet from '../components/profile/ProfileWallet'
+import Wallet from '../components/profile_components/Wallet'
 
 import '../style/profile.css'
 
 const Profile = () => {
+<<<<<<< Updated upstream
+=======
+
+    
+
+>>>>>>> Stashed changes
     return (
         <>
         <div className = "profile-wrapper">
@@ -33,7 +39,8 @@ const Profile = () => {
         </div>
 
         <div className = "profile-wallet">
-            <ProfileWallet />
+            <h2>Wallet</h2>
+            <Wallet />
         </div>
 
         </div>
