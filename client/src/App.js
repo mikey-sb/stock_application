@@ -12,6 +12,7 @@ function App() {
   const [selectedStock, setSelectedStock] = useState('');
   const [selectedStockInfo, setSelectedStockInfo] = useState(null)
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
+  const [yahooStock, setYahooStock] = useState(null);
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -46,16 +47,35 @@ function App() {
   useEffect(() => {
     getSelectedStockInfo()
   }, [selectedStock])
-  
+
+  const getYahooStock = () => {
+    fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "c32434762bmsh26e02adc977eae2p193ec4jsnedf78a356cc4",
+        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+	}
+})
+.then(res => res.json())
+.then(data =>setYahooStock(data))
+.catch(err => {
+	console.error(err);
+})
+}
+
+useEffect(() => {
+  getYahooStock()
+}, [])
+
   return (
     <Router>
     <>
-    {allStock ? <NavBar allStock={allStock}/> : null}
+    {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock}/>}/> : null }
 
     </Switch>
     </>

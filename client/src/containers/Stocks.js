@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
 import SearchDisplay from '../components/SearchDisplay'
 import CandleStickChart from '../components/CandleStickChart'
+import StockGainer from '../components/StockGainer'
 import {useState} from 'react'
 import BuyStockForm from '../components/BuyStockForm'
 
-const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks}) => {
+const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock}) => {
 
     const [buyButtonClicked, setBuyButtonClicked] = useState(false);
 
@@ -19,7 +20,6 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <>
                 <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
                 <CandleStickChart allStock={selectedStockInfo} />
-
                 </>
         )
       }
@@ -53,6 +53,8 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                     {renderStockInfo()}
                     <button onClick={handleAdd}>Buy Stock</button>
                     {renderBuyForm()}
+
+                    {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null}
                 </>
                 
             
