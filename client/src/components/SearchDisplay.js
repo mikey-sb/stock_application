@@ -10,8 +10,8 @@ const renderSelectedStockInfo = () => {
         
         return (
             <>
-        <li>{selectedStockInfo["Meta Data"]["2. Symbol"]}</li>
-        <li>{selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}</li>
+        <li>{`Stock: ${selectedStockInfo["Meta Data"]["2. Symbol"]}`}</li>
+        <li>{`Open: ${selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}`}</li>
         <li>
         {/* <CandleStickChart allStock={selectedStockInfo} /> */}
         </li>
