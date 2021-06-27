@@ -11,9 +11,6 @@ const BuyStockForm = ({selectedStockInfo}) => {
     const getPrice = () => {
         const stockOpen = selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]
         return stockOpen * amountOfShares
-
-        
-        console.log(stockOpen)
     }
 
     const handleSharesAmountChange = (event) => {
@@ -23,7 +20,14 @@ const BuyStockForm = ({selectedStockInfo}) => {
     const handleBuySubmit = (event) => {
         event.preventDefault()
         console.log(event)
-        const priceOfBuy = event.target[0]["form"][0]["value"]
+        const nameOfStock = event.target[0]["form"][0]["value"]
+        const priceOfBuy = event.target[0]["form"][1]["value"]
+        const numOfStock = event.target[0]["form"][2]["value"]
+        const purchaseRecord = {
+            "stock": nameOfStock,
+            "price": priceOfBuy,
+            "amount": numOfStock
+        }
         
     }
 
@@ -31,6 +35,7 @@ const BuyStockForm = ({selectedStockInfo}) => {
         <>
             <form onSubmit={handleBuySubmit}>
                 <label>{`Stock: ${selectedStockInfo["Meta Data"]["2. Symbol"]}`}</label>
+                <input type="hidden" name="stockName" value={selectedStockInfo["Meta Data"]["2. Symbol"]}></input>
                 <br></br>
                 <label>{`Price: $${getPrice()}`}</label>
                 <input type="hidden" name="amountPrice" value={getPrice()}></input>
