@@ -9,6 +9,14 @@ const ProfileWallet = () => {
     // const [PurchasedPrice, setPurchasedPrice] = useState(0)
     // const [QuantityPurchased, setQuantityPurchased] = useState(0)
 
+    // useEffect(() => {
+    //     getCash()
+    //     .then((total) => {
+    //         setTotal(total)
+    //         console.log("asdasd")
+
+    //     })
+    // }, [])
     
     const addCash = (total) => {
         setTotal(total)  //add cash should hold on the whole object not a number
@@ -26,6 +34,9 @@ const ProfileWallet = () => {
         setTotal(total - Number(inputNumber))
     }
     
+    // const walletItem = total.map((cash) => {
+    //     return <p>{cash.total_cash}</p>
+    // })
 
 
     const handleOnSubmit = (event) => {
@@ -47,7 +58,7 @@ const ProfileWallet = () => {
           Submit
             </button>
             <button onClick={() => withdraw()}>Withdraw</button>
-        <p>Total: {total}</p>
+        <p>Total: </p>
         </form>
     )
 }

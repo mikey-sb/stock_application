@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ProfileAllStock from '../components/profile/ProfileAllStock'
 import ProfileChange from '../components/profile/ProfileChange'
 import ProfileInfo from '../components/profile/ProfileInfo'
@@ -7,10 +7,10 @@ import ProfilePie from '../components/profile/ProfilePie'
 import ProfileWallet from '../components/profile/ProfileWallet'
 
 import '../style/profile.css'
+import { getCash } from '../WalletServices'
 
 const Profile = () => {
-
-
+ 
     
     return (
         <>
