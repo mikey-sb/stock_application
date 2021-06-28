@@ -24,13 +24,17 @@ const NewsFeed = ({yahooNews}) => {
         return (
             <div className="feed-container" key={index}>
                 <ul  className="feed-ul">
-                    <li className="feed-title-li"> 
-                        <a href={article.link}>{article.title}</a> 
+
+                    <li>
+                        <a href={article.link} target="_blank"><img src={newsGen()} alt="news_image" width="350"></img></a>
                     </li>
+
+                    <li className="feed-title-li"> 
+                        <a href={article.link} target="_blank">{article.title}</a> 
+                    </li>
+
                     <li className="feed-publisher-li">{article.publisher}</li> 
                     <li className="feed-date-li">{new String(Date(article.providerPublishTime))}</li> 
-                    <li className="feed-type-li">{article.type}</li> 
-                    <li><img src={newsGen()} alt="asds"></img></li>
                     
                 </ul>
             </div>

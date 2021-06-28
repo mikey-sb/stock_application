@@ -23,17 +23,11 @@ const CandleStickChart = ({allStock}) => {
             volume = [],
             dataLength = time_series_array.length,
             // set the allowed units for data grouping
-            groupingUnits = [[
-                'min',                         // unit name
-                [5, 10, 15, 30]                             // allowed multiples
-            ],
-            ['hour', 
-                [1, 4]
-            ],
-            ['day',
+            groupingUnits = [
+            ['week',
                 [1, 3]
             ],
-            ['week', [1, 2]]
+            ['month', [1, 2]]
             ]
 
             
