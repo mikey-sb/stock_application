@@ -18,9 +18,3 @@ db.wallet.insertMany([
         profit: 0
     }
 ])
-
-
-
-// 20 Amazon 
-// 50 Tesla 
-// 30 bitcoin
