@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import PriceTicker from './PriceTicker'
 
 
-const NavBar = ({allStock}) => {
+const NavBar = ({yahooStock}) => {
 
     // console.log({allStock})
     return (
@@ -30,7 +30,8 @@ const NavBar = ({allStock}) => {
         </div>
         </div>
         <div className="ticker-container-nav">
-        {/* <PriceTicker allStock={allStock}/> */}
+
+            {yahooStock ? <PriceTicker yahooStock={yahooStock}/> : null}
         
         </div>
         </>

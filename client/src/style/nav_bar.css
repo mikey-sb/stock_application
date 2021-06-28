@@ -8,26 +8,6 @@
     list-style: none;
 }
 
-.ticker-container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-   
-    max-height: 50px;
-}
-
-.ticker-container, .ticker-container > ul {
-    display: inline-block;
-    /* flex-flow: row wrap;
-    justify-content: space-evenly; */   
-    list-style: none;
-}
-
-
-.ticker-container > ul > li {
-    padding: 2px;
-    float: left;
-}
 
 .nav-wrapper {
     display: grid;

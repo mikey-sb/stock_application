@@ -14,7 +14,8 @@ const StockChart = ({allStock}) => {
         },
         series: [{
             name: 'Profit',
-            data: []
+            data: [],
+            
         }]
     }
     const chartTitle = {
