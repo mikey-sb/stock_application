@@ -8,7 +8,7 @@ import BuyStockForm from '../components/BuyStockForm'
 import PopularStocks from '../components/PopularStocks'
 import "../style/stocks.css"
 
-const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock, yahooNews}) => {
+const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock, boughtStockRecord}) => {
 
     const [buyButtonClicked, setBuyButtonClicked] = useState(false);
 
@@ -22,6 +22,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <>
                 <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
                 <CandleStickChart allStock={selectedStockInfo} />
+                {selectedStockInfo ? <button onClick={handleAdd}>Buy Stock</button> : null}
                 </>
         )
       }
@@ -51,7 +52,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
         // console.log(buyButtonClicked)
         return(
             <>
-            <BuyStockForm selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks}/>
+            <BuyStockForm selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} boughtStockRecord={boughtStockRecord}/>
             </>
         )
     }
@@ -68,7 +69,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                     {renderStockInfo()}
                 </div>
                 <div className="buy-form-container">
-                    <button onClick={handleAdd}>Buy Stock</button>
+                    {/* <button onClick={handleAdd}>Buy Stock</button> */}
                     {renderBuyForm()}
                 </div>
                 <div className="stocks-view-wrapper">

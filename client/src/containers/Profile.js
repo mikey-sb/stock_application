@@ -5,27 +5,37 @@ import ProfileInfo from '../components/profile/ProfileInfo'
 import ProfilePerformance from '../components/profile/ProfilePerformance'
 import ProfilePie from '../components/profile/ProfilePie'
 import ProfileWallet from '../components/profile/ProfileWallet'
+import { getStocks } from '../SharesServices'
 
 import '../style/profile.css'
 import { getCash } from '../WalletServices'
 
-const Profile = () => {
+const Profile = ({setAllOwnedStocks, allOwnedStocks}) => {
  
+    const [ownedStocks, setOwnedStocks] = useState([])
+
+    useEffect(() => {
+        getStocks()
+        .then((ownedStocks) => {
+            setOwnedStocks(ownedStocks)
+            setAllOwnedStocks(ownedStocks)
+        })
+    }, [])
     
     return (
         <>
         <div className = "profile-wrapper">
         <div className = "profile-all-stock">
-            <ProfileAllStock />
+            <ProfileAllStock ownedStocks={ownedStocks}/>
         </div>
         
-        <div className = "profile-change">
+        {/* <div className = "profile-change">
             <ProfileChange />
-        </div>
+        </div> */}
         
-        <div className = "profile-info">
+        {/* <div className = "profile-info">
             <ProfileInfo />
-        </div>
+        </div> */}
         
         <div className = "profile-performance">
             <ProfilePerformance />
@@ -36,7 +46,7 @@ const Profile = () => {
         </div>
 
         <div className = "profile-wallet">
-            <ProfileWallet />
+            <ProfileWallet ownedStocks={ownedStocks}/>
         </div>
 
         </div>

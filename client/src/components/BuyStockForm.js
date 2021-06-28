@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { postStock } from "../SharesServices"
 
-const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
+const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}) => {
 
     const [amountOfShares, setAmountOfShares] = useState(1)
 
@@ -18,17 +19,20 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
 
     const handleBuySubmit = (event) => {
         event.preventDefault()
-        console.log(event)
         const nameOfStock = event.target[0]["form"][0]["value"]
         const priceOfBuy = event.target[0]["form"][1]["value"]
         const numOfStock = event.target[0]["form"][2]["value"]
+        const singleStockPrice = event.target[0]["form"][3]["value"]
         const purchaseRecord = {
             "stock": nameOfStock,
-            "price": priceOfBuy,
-            "amount": numOfStock
+            "buyPrice": priceOfBuy,
+            "numberOfShares": numOfStock,
+            "singlePrice": singleStockPrice
         }
         updateBoughtStocks(purchaseRecord)
-
+        postStock(purchaseRecord)
+        // .then(result => console.log(result))
+        
     }
 
     return (
@@ -42,6 +46,7 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
                 <br></br>
                 <label>Number of shares: </label>
                 <input type="number" name="amountStock" onChange={handleSharesAmountChange} required/>
+                <input type="hidden" name="singlePrice" value={selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}></input>
                 <br></br>
                 <input type="submit" name="buy" value="Buy"/>
             </form>

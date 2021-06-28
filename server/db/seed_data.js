@@ -4,17 +4,11 @@ db.dropDatabase();
 db.stocks.insertMany(
     [
         { 
-            total_cash: 100, // - 20 (input)
-            stocks_held: [], // [{Amazon...}]
-            total_stocks_value: 0, // stock value x buy_amount
-            transaction_history: {} // [{Amazon... buy_price buy_time}]
+            stock: "GME", // - 20 (input)
+            buyPrice: 150, // [{Amazon...}]
+            numberOfShares: 3, // stock value x buy_amount
+            singlePrice: 50 // [{Amazon... buy_price buy_time}]
         },
-        { 
-            total_cash: 50, // - 20 (input)
-            stocks_held: [], // [{Amazon...}]
-            total_stocks_value: 0, // stock value x buy_amount
-            transaction_history: [] // [{Amazon... buy_price buy_time}]
-        }
     ]
 )
 

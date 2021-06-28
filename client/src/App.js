@@ -13,7 +13,8 @@ function App() {
   const [selectedStockInfo, setSelectedStockInfo] = useState(null)
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
   const [yahooStock, setYahooStock] = useState(null);
-  const [yahooNews, setYahooNews] = useState(null);
+  const [allOwnedStocks, setAllOwnedStocks] = useState([])
+  const [yahooNews, setYahooNews] = useState(null)
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -93,9 +94,9 @@ getYahooNews()
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     
     <Switch>
-    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock}/>}/> : null }
+    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
 
     </Switch>
     </>
