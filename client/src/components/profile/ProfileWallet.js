@@ -44,7 +44,6 @@ const ProfileWallet = ({ownedStocks}) => {
             profit: total.profit
         }
         updateCash(total._id, copyTotal).then((data) => {
-            // addCash(data)
             }
         )
     }
