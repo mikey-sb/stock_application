@@ -10,7 +10,7 @@ const StockGainer = ({yahooStock}) => {
                 <li>Company: {quote.shortName}</li>
                 <li>Symbol: {quote.symbol}</li>
                 <li>Market Price: ${quote.regularMarketPrice}</li>
-                <li>24hr Change: {quote.regularMarketChangePercent.toFixed(2)}%</li>
+                <li>24hr Change: {Number(quote.regularMarketChangePercent).toFixed(2)}%</li>
             </ul>
         )
         })
