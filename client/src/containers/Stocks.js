@@ -55,7 +55,7 @@ const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInf
                     
                     {renderBuyForm()}
 
-                    {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null}
+                    {/* {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null} */}
                 </>
                 
             
