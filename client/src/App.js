@@ -27,11 +27,14 @@ function App() {
   }, [])
 
   const apiKey = '6OYBENRW75CQHHNZ'
+  const apiKey2 = 'BYBIX6SQ25IPZAUH'
+
+  
   const interval = '60min'
 
 
   const getStock = () => {
-          fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
+          fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey2}`)
           .then(res => res.json())
           .then(data =>setAllStock(data))
           .catch((err) => {
@@ -43,7 +46,7 @@ function App() {
   }, [])
 
   const getSelectedStockInfo = () => {
-    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=BYBIX6SQ25IPZAUH`)
+    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=${apiKey2}`)
     .then(res => res.json())
     .then(data =>setSelectedStockInfo(data))
     .catch((err) => {

@@ -14,7 +14,7 @@ const Home = ({allStock, yahooNews}) => {
            
            
             <div className="portfolio-value-container">
-                < StockChart allStock={allStock} />
+                {/* < StockChart allStock={allStock} /> */}
             </div>
            
             <div className="news-feed-container">
