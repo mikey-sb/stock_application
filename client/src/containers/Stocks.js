@@ -20,6 +20,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <>
                 <SearchDisplay selectedStock={selectedStock} selectedStockInfo={selectedStockInfo}/>
                 <CandleStickChart allStock={selectedStockInfo} />
+                {selectedStockInfo ? <button onClick={handleAdd}>Buy Stock</button> : null}
                 </>
         )
       }
@@ -51,7 +52,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <>
                     <SearchBar setSelectedStock={setSelectedStock}/>
                     {renderStockInfo()}
-                    <button onClick={handleAdd}>Buy Stock</button>
+                    
                     {renderBuyForm()}
 
                     {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null}
