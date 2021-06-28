@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { postStock } from "../SharesServices"
+import "../style/stock-show.css"
 
 const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}) => {
 
@@ -48,7 +49,7 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}
                 <input type="number" name="amountStock" onChange={handleSharesAmountChange} required/>
                 <input type="hidden" name="singlePrice" value={selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}></input>
                 <br></br>
-                <input type="submit" name="buy" value="Buy"/>
+                <input type="submit" name="buy" value="BUY" className="buy-submit-button"/>
             </form>
         </>
     )

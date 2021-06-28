@@ -1,0 +1,15 @@
+.buy-submit-button {
+    width: 100px;
+    /* background-color: green; */
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    border-width: 0px 2px;
+    border-color: green;
+    color: green;
+    background-color: white;
+    border-style: solid;
+}
+
+.buy-submit-button:hover {
+    border-width: 0px 4px;
+}

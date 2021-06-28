@@ -8,7 +8,7 @@ const Home = ({allStock, yahooNews}) => {
     return (
         <>
         
-        <h1>HOME</h1>
+        <h1 className="header">HOME</h1>
         <div className="home-container">
 
            
@@ -18,7 +18,7 @@ const Home = ({allStock, yahooNews}) => {
             </div>
            
             <div className="news-feed-container">
-                { yahooNews ? <NewsFeed yahooNews={yahooNews}/> : null }
+                {/* { yahooNews ? <NewsFeed yahooNews={yahooNews}/> : null } */}
             </div>
 
             <div className="home-profile-container">

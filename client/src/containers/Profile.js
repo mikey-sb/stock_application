@@ -24,6 +24,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks}) => {
     
     return (
         <>
+        <h1 className="header">PROFILE</h1>
         <div className = "profile-wrapper">
         <div className = "profile-all-stock">
             <ProfileAllStock ownedStocks={ownedStocks}/>
