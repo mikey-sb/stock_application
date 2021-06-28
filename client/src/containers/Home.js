@@ -18,7 +18,7 @@ const Home = ({allStock, yahooNews}) => {
             </div>
            
             <div className="news-feed-container">
-                { yahooNews ? < NewsFeed yahooNews={yahooNews}/> : null }
+                { yahooNews ? <NewsFeed yahooNews={yahooNews}/> : null }
             </div>
 
             <div className="home-profile-container">
