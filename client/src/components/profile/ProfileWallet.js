@@ -4,13 +4,13 @@ import {postCash, getCash, updateCash} from '../../WalletServices'
 
 const ProfileWallet = ({ownedStocks}) => {
 
-    const [total, setTotal] = useState(0);
+    const [wallet, setWallet] = useState(0);
     const [inputNumber, setInputNumber] = useState(null)
 
     useEffect(() => {
         getCash()
-        .then((total) => {
-            setTotal(total[0])
+        .then((wallet) => {
+            setWallet(wallet[0])
 
         })
     }, [])
@@ -26,24 +26,24 @@ const ProfileWallet = ({ownedStocks}) => {
     }
 
     const deposit = () => {
-        const copyTotal = {...total}
+        const copyTotal = {...wallet}
         copyTotal.total_cash += Number(inputNumber)
-        setTotal(copyTotal)
+        setWallet(copyTotal)
     }
 
     const withdraw = () => {
-        const copyTotal = {...total}
+        const copyTotal = {...wallet}
         copyTotal.total_cash -= Number(inputNumber)
-        setTotal(copyTotal)
+        setWallet(copyTotal)
     }
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
         const copyTotal = {
-            total_cash: total.total_cash, 
-            profit: total.profit
+            total_cash: wallet.total_cash, 
+            profit: wallet.profit
         }
-        updateCash(total._id, copyTotal).then((data) => {
+        updateCash(wallet._id, copyTotal).then((data) => {
             }
         )
     }
@@ -62,7 +62,7 @@ const ProfileWallet = ({ownedStocks}) => {
           Deposit
             </button>
             <button onClick={() => withdraw()}>Withdraw</button>
-        <p>Total Cash: ${total.total_cash}</p>
+        <p>Total Cash: ${wallet.total_cash}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
         </form>
     )
