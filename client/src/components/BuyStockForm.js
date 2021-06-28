@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { postStock } from "../SharesServices"
 
-const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
+const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}) => {
 
     const [amountOfShares, setAmountOfShares] = useState(1)
 
@@ -26,11 +27,15 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks}) => {
         const purchaseRecord = {
             "stock": nameOfStock,
             "buyPrice": priceOfBuy,
-            "amount": numOfStock,
+            "numberOfShares": numOfStock,
             "singlePrice": singleStockPrice
         }
         updateBoughtStocks(purchaseRecord)
-
+        //Update the database
+        console.log(purchaseRecord)
+        postStock(purchaseRecord)
+        .then(result => console.log(result))
+        
     }
 
     return (
