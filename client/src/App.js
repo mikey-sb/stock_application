@@ -74,7 +74,7 @@ useEffect(() => {
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord}/>}/> : null }
     {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord}/>}/> : null }
 
     </Switch>
