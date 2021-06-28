@@ -17,23 +17,19 @@ const CandleStickChart = ({allStock}) => {
         // console.log(data_array)
 
         let stockSymbol = Object.values(allStock["Meta Data"]["2. Symbol"])
+        let ssj = String(stockSymbol.join(''))
+
 
                 // split the data set into ohlc and volume
             var ohlc = [],
             volume = [],
             dataLength = time_series_array.length,
             // set the allowed units for data grouping
-            groupingUnits = [[
-                'min',                         // unit name
-                [5, 10, 15, 30]                             // allowed multiples
-            ],
-            ['hour', 
-                [1, 4]
-            ],
-            ['day',
+            groupingUnits = [
+            ['week',
                 [1, 3]
             ],
-            ['week', [1, 2]]
+            ['month', [1, 2]]
             ]
 
             
@@ -57,12 +53,10 @@ const CandleStickChart = ({allStock}) => {
                 Number(data_array[i]['5. volume']), // the volume
             ]);
         }
-
-        // console.log('DataArray:', ohlc)
-    
+        
 
         chartTitle = {
-            text: stockSymbol
+            text: ssj
         }
         // create the chart
         options = {
@@ -72,7 +66,7 @@ const CandleStickChart = ({allStock}) => {
             },
 
             title: {
-                text: stockSymbol
+                text: ssj
             },
 
             yAxis: [{

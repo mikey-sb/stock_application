@@ -20,7 +20,7 @@
 }
 
 @keyframes scroll {
-    from{ transform: translateX(-4200px)}
+    from{ transform: translateX(-4700px)}
     to{ transform: translateX(1250px)}
 }
 

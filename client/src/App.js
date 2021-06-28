@@ -68,6 +68,25 @@ useEffect(() => {
   getYahooStock()
 }, [])
 
+const getYahooNews = () => {
+  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "c32434762bmsh26e02adc977eae2p193ec4jsnedf78a356cc4",
+      "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+}
+})
+.then(res => res.json())
+.then(data =>setYahooNews(data))
+.catch(err => {
+console.error(err);
+})
+}
+
+useEffect(() => {
+getYahooNews()
+}, [])
+
   return (
     <Router>
     <>
