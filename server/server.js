@@ -21,7 +21,7 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const db = client.db('shares')
     const walletCollection = db.collection('wallet')
     const walletRouter = createRouter(walletCollection)
-    app.use('/profile', walletRouter)
+    app.use('/api/profile', walletRouter)
 })
 .catch(console.error)
 
