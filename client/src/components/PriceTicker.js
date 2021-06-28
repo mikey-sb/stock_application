@@ -29,7 +29,7 @@ const PriceTicker = ({yahooStock}) => {
         })
     
 
-        console?.log(yahooStock)
+        // console?.log(yahooStock)
     return (
             <div className="ticker-wrapper">
                 <div className="ticker1-container">

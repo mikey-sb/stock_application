@@ -16,7 +16,7 @@ const StockGainer = ({yahooStock}) => {
         })
     
 
-         console?.log(yahooStock)
+        //  console?.log(yahooStock)
     return (
         <div>
         <h1>Trending Stocks</h1> 

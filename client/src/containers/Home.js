@@ -4,7 +4,7 @@ import '../style/home.css'
 import NewsFeed from '../components/NewsFeed'
 
 const Home = ({allStock}) => {
-    console.log(allStock)
+    // console.log(allStock)
     return (
         <>
         
