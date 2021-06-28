@@ -28,12 +28,15 @@
     display: inline-block;
     background-color: white;
     max-height: 40px;
-    width: 1200px;
+    width: 1000px;
+   
     overflow-x: hidden;
-    border-width: 1px;
-    border-color: grey;
+    border-width: 0px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-color: skyblue;
     border-style: solid;
-    margin-left: 20px;
+    margin-left: 130px;
 }
 
 .ticker1-container, 
