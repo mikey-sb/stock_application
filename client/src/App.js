@@ -13,6 +13,7 @@ function App() {
   const [selectedStockInfo, setSelectedStockInfo] = useState(null)
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
   const [yahooStock, setYahooStock] = useState(null);
+  const [yahooNews, setYahooNews] = useState(null);
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -67,13 +68,32 @@ useEffect(() => {
   getYahooStock()
 }, [])
 
+const getYahooNews = () => {
+  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "c32434762bmsh26e02adc977eae2p193ec4jsnedf78a356cc4",
+      "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+}
+})
+.then(res => res.json())
+.then(data =>setYahooNews(data))
+.catch(err => {
+console.error(err);
+})
+}
+
+useEffect(() => {
+getYahooNews()
+}, [])
+
   return (
     <Router>
     <>
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     
     <Switch>
-    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
+    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock}/>}/> : null }
     {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock}/>}/> : null }
 

@@ -3,7 +3,7 @@ import CandleStickChart from '../components/CandleStickChart'
 import '../style/home.css'
 import NewsFeed from '../components/NewsFeed'
 
-const Home = ({allStock}) => {
+const Home = ({allStock, yahooNews}) => {
     console.log(allStock)
     return (
         <>
@@ -18,7 +18,7 @@ const Home = ({allStock}) => {
             </div>
            
             <div className="news-feed-container">
-                < NewsFeed />
+                { yahooNews ? < NewsFeed yahooNews={yahooNews}/> : null }
             </div>
 
             <div className="home-profile-container">
