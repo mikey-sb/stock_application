@@ -17,6 +17,8 @@ const CandleStickChart = ({allStock}) => {
         // console.log(data_array)
 
         let stockSymbol = Object.values(allStock["Meta Data"]["2. Symbol"])
+        let ssj = String(stockSymbol.join(''))
+
 
                 // split the data set into ohlc and volume
             var ohlc = [],
@@ -51,12 +53,10 @@ const CandleStickChart = ({allStock}) => {
                 Number(data_array[i]['5. volume']), // the volume
             ]);
         }
-
-        // console.log('DataArray:', ohlc)
-    
+        
 
         chartTitle = {
-            text: stockSymbol
+            text: ssj
         }
         // create the chart
         options = {
@@ -66,7 +66,7 @@ const CandleStickChart = ({allStock}) => {
             },
 
             title: {
-                text: stockSymbol
+                text: ssj
             },
 
             yAxis: [{
