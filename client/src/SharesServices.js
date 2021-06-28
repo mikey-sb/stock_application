@@ -2,7 +2,7 @@ const baseURL = 'http://localhost:5000/api/stocks/'
 const apiURL = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=6OYBENRW75CQHHNZ'
 
 export const getStocks = () => {
-    return fetch(baseURL).then(res => res.json)
+    return fetch(baseURL).then(res => res.json())
 }
 
 export const postStock = (payload) => {
