@@ -5,6 +5,10 @@ import { IconContext } from "react-icons";
 import "../style/ticker.css"
 
 const PriceTicker = ({yahooStock}) => {
+    
+
+    console?.log(yahooStock)
+
     const allYahooStocks = yahooStock.finance.result[0].quotes.map((quote, index) => {
         return (
             <ul key={index} className="ticker-ul">
@@ -14,7 +18,7 @@ const PriceTicker = ({yahooStock}) => {
                 <li className={quote.regularMarketChangePercent > 0 ? 
                     "change-li, change-li-positive" 
                     : "change-li, change-li-negative"}>
-                    {quote.regularMarketChangePercent.toFixed(2)}%
+                    {Number(quote.regularMarketChangePercent).toFixed(2)}%
                 </li>
 
                 {quote.regularMarketChangePercent > 0 ?
