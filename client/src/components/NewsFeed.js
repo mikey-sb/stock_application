@@ -8,14 +8,18 @@ import news5 from "../img/news5.jpg"
 
 const NewsFeed = ({yahooNews}) => {
 
-    let newsGen = () => {
-        let rando = Math.floor((Math.random() * 10));
-        return `news${rando}`
+    let img_list = [news1, news2, news3, news4, news5]
 
-    }
+
+
+    let newsGen = (() => {
+        return img_list[Math.floor(Math.random()*img_list.length)];
+    })
    
 
     let allYahooNews = yahooNews.news.map((article, index) => {
+
+        console.log(newsGen())
 
         return (
             <div className="feed-container" key={index}>
@@ -26,7 +30,7 @@ const NewsFeed = ({yahooNews}) => {
                     <li className="feed-publisher-li">{article.publisher}</li> 
                     <li className="feed-date-li">{new String(Date(article.providerPublishTime))}</li> 
                     <li className="feed-type-li">{article.type}</li> 
-                    <li><img src={newsGen} alt="asds"></img></li>
+                    <li><img src={newsGen()} alt="asds"></img></li>
                     
                 </ul>
             </div>
