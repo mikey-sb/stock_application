@@ -30,7 +30,6 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         event.preventDefault()
         const nameOfStock = event.target[0]["form"][0]["value"]
         const priceOfBuy = Number(event.target[0]["form"][1]["value"])
-        console.log(typeof priceOfBuy)
         const numOfStock = event.target[0]["form"][2]["value"]
         const singleStockPrice = event.target[0]["form"][3]["value"]
         const purchaseRecord = {

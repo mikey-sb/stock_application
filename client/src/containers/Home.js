@@ -14,7 +14,7 @@ const Home = ({allStock, yahooNews}) => {
            
            
             <div className="portfolio-value-container">
-                {/* < StockChart allStock={allStock} /> */}
+                < StockChart allStock={allStock} />
             </div>
            
             <div className="news-feed-container">
@@ -24,7 +24,7 @@ const Home = ({allStock, yahooNews}) => {
             <div className="home-profile-container">
                 <h1>Home Profile</h1>
             </div>
-           {/* < CandleStickChart allStock={allStock} /> */}
+           < CandleStickChart allStock={allStock} />
 
         </div>
         
