@@ -5,8 +5,10 @@ import CandleStickChart from '../components/CandleStickChart'
 import StockGainer from '../components/StockGainer'
 import {useState} from 'react'
 import BuyStockForm from '../components/BuyStockForm'
+import PopularStocks from '../components/PopularStocks'
+import "../style/stocks.css"
 
-const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock}) => {
+const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock, yahooNews}) => {
 
     const [buyButtonClicked, setBuyButtonClicked] = useState(false);
 
@@ -22,6 +24,16 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
                 <CandleStickChart allStock={selectedStockInfo} />
                 </>
         )
+      }
+  }
+
+  const renderPopularStock = () => {
+      if(yahooStock){
+          return (
+              <>
+                <PopularStocks yahooStock={yahooStock}/>  
+              </>
+          )
       }
   }
 
@@ -49,12 +61,24 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
         <div>
            
                 <>
+                <div className="search-container">
                     <SearchBar setSelectedStock={setSelectedStock}/>
+                </div>
+                <div className="render-info-container">
                     {renderStockInfo()}
+                </div>
+                <div className="buy-form-container">
                     <button onClick={handleAdd}>Buy Stock</button>
                     {renderBuyForm()}
-
-                    {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null}
+                </div>
+                <div className="stocks-view-wrapper">
+                    <div className="trending-container">
+                        {/* {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null} */}
+                    </div>
+                    <div className="popular-container">
+                        {renderPopularStock()}
+                    </div>
+                </div>
                 </>
                 
             
