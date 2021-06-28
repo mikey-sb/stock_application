@@ -14,6 +14,7 @@ function App() {
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
   const [yahooStock, setYahooStock] = useState(null);
   const [allOwnedStocks, setAllOwnedStocks] = useState([])
+  const [yahooNews, setYahooNews] = useState(null)
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
