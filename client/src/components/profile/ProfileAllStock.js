@@ -1,38 +1,25 @@
 import React, {useEffect, useState} from 'react'
 import { getStocks } from '../../SharesServices'
 
-const ProfileAllStock = ({boughtStockRecord}) => {
+const ProfileAllStock = ({boughtStockRecord, ownedStocks}) => {
 
-    const [stuff, setStuff] = useState([])
-
-    useEffect(() => {
-        getStocks()
-        .then((stuff) => {
-            console.log(stuff)
-            setStuff(stuff)
-        })
-    }, [])
-
-    const renderStuff = stuff.map(stock => {
-        console.log(stock.stock)
+    const renderStocks = ownedStocks.map(stock => {
         return (
-            <>
+            <div key={stock._id}>
             <p>Stock: {stock.stock}</p>
-            <p>Total Buy Price: {stock.buyPrice}</p>
+            <p>Total Buy Price: ${stock.buyPrice}</p>
             <p>Number of Shares: {stock.numberOfShares}</p>
-            <p>Stock Price: {stock.singlePrice}</p>
+            <p>Stock Price: ${stock.singlePrice}</p>
             <br></br>
-            </>
+            </div>
         )
     })
-
-    
 
     return (
         <div>
             <h1>ALL STOCKS OWNED</h1>
             <ul>
-                {renderStuff}
+                {renderStocks}
             </ul>
         </div>
     )

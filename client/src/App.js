@@ -13,6 +13,7 @@ function App() {
   const [selectedStockInfo, setSelectedStockInfo] = useState(null)
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
   const [yahooStock, setYahooStock] = useState(null);
+  const [allOwnedStocks, setAllOwnedStocks] = useState([])
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -74,8 +75,8 @@ useEffect(() => {
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
 
     </Switch>
     </>

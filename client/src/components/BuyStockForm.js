@@ -19,7 +19,6 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}
 
     const handleBuySubmit = (event) => {
         event.preventDefault()
-        console.log(event)
         const nameOfStock = event.target[0]["form"][0]["value"]
         const priceOfBuy = event.target[0]["form"][1]["value"]
         const numOfStock = event.target[0]["form"][2]["value"]
@@ -31,10 +30,8 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord}
             "singlePrice": singleStockPrice
         }
         updateBoughtStocks(purchaseRecord)
-        //Update the database
-        console.log(purchaseRecord)
         postStock(purchaseRecord)
-        .then(result => console.log(result))
+        // .then(result => console.log(result))
         
     }
 
