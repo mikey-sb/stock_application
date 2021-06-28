@@ -5,6 +5,7 @@ import Profile from './containers/Profile'
 import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { getCash } from './WalletServices';
 
 function App() {
 
@@ -15,6 +16,15 @@ function App() {
   const [yahooStock, setYahooStock] = useState(null);
   const [allOwnedStocks, setAllOwnedStocks] = useState([])
   const [yahooNews, setYahooNews] = useState(null)
+  const [wallet, setWallet] = useState(0);
+
+  useEffect(() => {
+      getCash()
+      .then((wallet) => {
+          setWallet(wallet[0])
+
+      })
+  }, [])
 
   const apiKey = '6OYBENRW75CQHHNZ'
   const interval = '60min'
@@ -95,8 +105,8 @@ getYahooNews()
     
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks setWallet={setWallet} wallet={wallet} selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
 
     </Switch>
     </>

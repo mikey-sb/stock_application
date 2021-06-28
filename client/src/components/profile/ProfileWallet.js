@@ -2,18 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { updateStock } from '../../SharesServices';
 import {postCash, getCash, updateCash} from '../../WalletServices'
 
-const ProfileWallet = ({ownedStocks}) => {
+const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
 
-    const [wallet, setWallet] = useState(0);
     const [inputNumber, setInputNumber] = useState(null)
-
-    useEffect(() => {
-        getCash()
-        .then((wallet) => {
-            setWallet(wallet[0])
-
-        })
-    }, [])
 
     const getPortfolioTotal = () => {
         const portfolioValue = ownedStocks.reduce((totalValue, stock) => {

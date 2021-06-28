@@ -6,7 +6,7 @@ import StockGainer from '../components/StockGainer'
 import {useState} from 'react'
 import BuyStockForm from '../components/BuyStockForm'
 
-const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock, boughtStockRecord}) => {
+const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInfo, selectedStockInfo, updateBoughtStocks, yahooStock, boughtStockRecord, wallet}) => {
 
     const [buyButtonClicked, setBuyButtonClicked] = useState(false);
 
@@ -40,7 +40,7 @@ const Stocks = ({selectedStock, setSelectedStock, setSelectedStockInfo, selected
         // console.log(buyButtonClicked)
         return(
             <>
-            <BuyStockForm selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} boughtStockRecord={boughtStockRecord}/>
+            <BuyStockForm setWallet={setWallet} wallet={wallet} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} boughtStockRecord={boughtStockRecord}/>
             </>
         )
     }
