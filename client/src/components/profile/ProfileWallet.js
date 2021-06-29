@@ -10,11 +10,8 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
         const portfolioValue = ownedStocks.reduce((totalValue, stock) => {
 
             return totalValue + Number(stock.buyPrice)
-            
         }, 0)
-
-        console.log(portfolioValue)
-        
+        // console.log(portfolioValue)
         return portfolioValue.toFixed(2)
     }
 

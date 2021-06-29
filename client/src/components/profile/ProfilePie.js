@@ -1,10 +1,17 @@
 import React from 'react'
-import {render} from 'react-dom'
 import HighCharts from 'highcharts/highstock';
 import PieChart from 'highcharts-react-official'
 import { all } from 'proxy-addr';
 
-const ProfilePie = ({allOwnedStock}) => {
+const ProfilePie = ({allOwnedStock, ownedStocks}) => {
+
+    // var output = ownedStocks.map((stock) => {
+    //     stock.reduce((sameStock, stock) => {
+    //         return sameStock + stock.stock
+
+    //     })
+    // })
+
 
     const options = {
         chart: {
@@ -26,34 +33,21 @@ const ProfilePie = ({allOwnedStock}) => {
         series: [
           {
             colorByPoint: true,
-            data: [
-              {
-                name: "IBM",  
-                y: 2000
-              },
-              {
-                  name: "TSLA",
-                y: 20000
-              }
-            ]
+            data: ownedStocks.map((stock) => {
+                return {name: stock.stock, y: Number(stock.buyPrice)}
+            })
           }
         ]
       };
 
-    const render = () => {
-        return (
-            <div>
-                <PieChart highCharts={HighCharts} options={options} />
-            </div>
-        )
-    }
-      
 
 
     return (
         <div>
             <h1>Pie Chart</h1>
-            <p>{render()}</p>
+            <div>
+                <PieChart highCharts={HighCharts} options={options} /> 
+            </div>
         </div>
     )
 }
