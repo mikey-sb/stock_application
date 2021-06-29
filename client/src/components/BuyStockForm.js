@@ -1,10 +1,7 @@
 import { useState } from "react"
 import { postStock } from "../SharesServices"
-<<<<<<< HEAD
 import { updateCash } from "../WalletServices"
-=======
 import "../style/stock-show.css"
->>>>>>> develop
 
 const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord, wallet, setWallet}) => {
 
