@@ -56,18 +56,18 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
 
     return (
         <>
-            <form onSubmit={handleBuySubmit}>
-                <label>{`Stock: ${selectedStockInfo["Meta Data"]["2. Symbol"]}`}</label>
+            <form onSubmit={handleBuySubmit} className="form-form">
+                <label className="form-label">{`${selectedStockInfo["Meta Data"]["2. Symbol"]}`}</label>
                 <input type="hidden" name="stockName" value={selectedStockInfo["Meta Data"]["2. Symbol"]}></input>
                 <br></br>
-                <label>{`Price: $${getPrice()}`}</label>
+                <label>{`Price: $${getPrice().toFixed(2)}`}</label>
                 <br></br>
-                <label>Wallet: ${wallet.total_cash}</label>
+                <label>Wallet: ${wallet.total_cash.toFixed(2)}</label>
                 <input type="hidden" name="amountPrice" value={getPrice()}></input>
                 <br></br>
-                <label>Number of shares: </label>
-                <input type="number" name="amountStock" onChange={handleSharesAmountChange} required/>
-                <input type="hidden" name="singlePrice" value={selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}></input>
+                <label>Shares: </label><br></br>
+                <input className = "buy-amount" type="number" name="amountStock" onChange={handleSharesAmountChange} className="stock-buy-input"required/>
+                <input className = "buy-amount" type="hidden" name="singlePrice" value={selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}></input>
                 <br></br>
                 <input type="submit" name="buy" value="BUY" className="buy-submit-button"/>
             </form>

@@ -17,24 +17,28 @@ const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInf
         renderStockInfo()
         }, [selectedStockInfo])
 
+        
+
     const renderStockInfo = () => {
         if(selectedStockInfo){
             return (
                 <>
-                    <SearchDisplay 
-                    selectedStock={selectedStock} 
-                    selectedStockInfo={selectedStockInfo}/>
+                <div className='stock-display-container'>
                     <div className="candlestick-container">
-                        <CandleStickChart 
-                        allStock={selectedStockInfo} />
+                            <CandleStickChart 
+                            allStock={selectedStockInfo} />
+                        </div>
+                    <div className="search-display-container">
+                        <SearchDisplay 
+                            selectedStock={selectedStock} 
+                            selectedStockInfo={selectedStockInfo}
+                            handleAdd={handleAdd}
+                        
+                        />
                     </div>
-                    {selectedStockInfo ? 
-                        <div className="buy-button-container">
-                            <button onClick={handleAdd} className="buy-button">
-                                Buy Stock
-                            </button>
-                        </div> 
-                    : null}
+                    
+                </div>
+                    
                 </>
             )
         }
@@ -78,14 +82,17 @@ const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInf
                 <div className="search-container">
                     <SearchBar setSelectedStock={setSelectedStock}/>
                 </div>
+
+
+                <div className="buy-form-container" id="form">
+                    {/* <button onClick={handleAdd}>Buy Stock</button> */}
+                    {renderBuyForm()}
+                </div>
+
                 <div className="render-info-container">
                     {renderStockInfo()}
                 </div>
-                <div className="buy-form-container">
-                    {/* <button onClick={handleAdd}>Buy Stock</button> */}
-                    {renderBuyForm()}
-
-                </div>
+                
                 <div className="stocks-view-wrapper">
                     <div className="trending-container">
                         {/* {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null} */}

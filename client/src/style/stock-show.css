@@ -13,3 +13,21 @@
 .buy-submit-button:hover {
     border-width: 0px 4px;
 }
+
+
+.stock-buy-input {
+    text-align: center;
+    font-size: 20px;
+    width: 50px;
+    border-style: none;
+    border-bottom-style: solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    color: darkgray;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
