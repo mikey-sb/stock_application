@@ -8,7 +8,6 @@ import stocks_logo from '../img/stocks_logo.png'
 
 const NavBar = ({yahooStock}) => {
 
-    // console.log({allStock})
     return (
         <>
         <div className="nav-wrapper">

@@ -18,7 +18,6 @@ const DataContainer = () => {
         getStock()
     }, [])
 
-    console.log()
     return (
         <>
             <div className="data-container">
