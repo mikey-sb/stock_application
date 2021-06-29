@@ -107,7 +107,7 @@ getYahooNews()
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     
     <Switch>
-    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
+    {allStock ? <Route exact path="/" render={() => <Home wallet={wallet} allStock={allStock} yahooNews={yahooNews}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
     {allStock ? <Route exact path="/stocks" render={() => <Stocks setWallet={setWallet} wallet={wallet} selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
     </Switch>
