@@ -26,6 +26,21 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
         copyTotal.total_cash -= Number(inputNumber)
         setWallet(copyTotal)
     }
+    // const button = 
+    //         document.addEventListener("DOMContentLoaded", function () {
+    //         var btn = document.querySelector(".button"),
+    //           loader = document.querySelector(".loader"),
+    //           check = document.querySelector(".check");
+          
+    //         btn.addEventListener("click", function () {
+    //           loader.classList.add("active");
+    //         });
+          
+    //         loader.addEventListener("animationend", function () {
+    //           check.classList.add("active");
+    //         });
+    //       }); 
+    
 
     const handleOnSubmit = (event) => {
         event.preventDefault()
@@ -45,14 +60,17 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
     return (
         <form onSubmit={handleOnSubmit} className="wallet-form">
             <h1 className="header">WALLET</h1>
-            <input type="number" onChange={handleNumberInput} className="wallet-input" placeholder=""/>
+            <input type="number" min="0" onChange={handleNumberInput} className="wallet-input" placeholder=""/>
             <br></br>
-            <button onClick={() => deposit()} className="deposit-button">
+            <div className="main1">
+            <button onClick={() => deposit()} className="button">
                 Deposit
             </button>
-            <button onClick={() => withdraw()} className="withdraw-button">
+            <br></br>
+            <button onClick={() => withdraw()} className="button">
                 Withdraw
             </button>
+            </div>
         <p className="wallet-total-cash">Total Cash: ${wallet.total_cash}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
         {/* <p>Portfolio Value: {wallet.portfolio_value[(wallet.portfolio_value.length - 1)]}</p> */}
