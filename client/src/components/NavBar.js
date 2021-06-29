@@ -3,6 +3,7 @@ import '../style/nav_bar.css'
 import '../style/main.css'
 import {Link} from 'react-router-dom'
 import PriceTicker from './PriceTicker'
+import stocks_logo from '../img/stocks_logo.png'
 
 
 const NavBar = ({yahooStock}) => {
@@ -12,19 +13,19 @@ const NavBar = ({yahooStock}) => {
         <>
         <div className="nav-wrapper">
         <div className="logo-container">
-            <h3>Stock App</h3>          
+            <img src={stocks_logo} alt="company logo" width='100px'></img>         
         </div>
 
         <div className="nav-container">      
             <ul className="nav-ul">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">HOME</Link>
                 </li>             
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/profile">PROFILE</Link>
                 </li>
                 <li>
-                    <Link to="/stocks">Stocks</Link>
+                    <Link to="/stocks">STOCKS</Link>
                 </li>
             </ul>
         </div>
@@ -34,6 +35,7 @@ const NavBar = ({yahooStock}) => {
             {/* {yahooStock ? <PriceTicker yahooStock={yahooStock}/> : null} */}
         
         </div>
+        <div className="nav-span"></div>
         </>
     )
 }

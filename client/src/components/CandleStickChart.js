@@ -69,6 +69,16 @@ const CandleStickChart = ({allStock}) => {
                 text: ssj
             },
 
+            chart: {
+                width: 1200
+            },
+
+            xAxis: [{resize: {
+                enabled: true
+            }}],
+
+            
+
             yAxis: [{
                 labels: {
                     align: 'right',
@@ -97,7 +107,7 @@ const CandleStickChart = ({allStock}) => {
             }],
 
             tooltip: {
-                split: true
+                split: false
             },
 
             series: [{

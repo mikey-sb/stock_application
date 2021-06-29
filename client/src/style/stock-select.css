@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.form-container {
+    align-items: center;
+    text-align: center;
+}
+
+.stock-select {
+    width: 200px;
+    border-width: 0px 2px;
+    border-color: dodgerblue;
+    color: dodgerblue;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.1s linear;
+}
+
+/* unvisited link */
+.stock-select:link {
+    color: dodgerblue;
+    border-width: 0px;
+  }
+  
+  /* visited link */
+  .stock-select:visited {
+    color: dodgerblue;
+    border-width: 0px;
+  }
+  
+  /* mouse over link */
+  .stock-select:hover, .stock-search-submit:hover {
+    color: dodgerblue;
+    /* background-color: firebrick; */
+    border-width: 0px 3px;
+  }
+  
+  /* selected link */
+  .stock-select:active, .stock-search-submit:active {
+    color: skyblue;
+    border-width: 0px;
+  }
+
+  .stock-search-submit {
+    width: 150px;
+    border-width: 0px 2px;
+    border-color: dodgerblue;
+    color: dodgerblue;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.1s linear;
+    background-color: white;
+    margin-top: 10px;
+  }

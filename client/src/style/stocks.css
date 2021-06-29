@@ -1,0 +1,61 @@
+.pop-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(20px, auto);
+    align-items: center;
+    width: 800px;
+    
+}
+
+.popular-ul {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(20px, auto);
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-price-change-container {
+    grid-column: 3;
+}
+
+.pop-symbol {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 15px;
+}
+.pop-name {
+    margin-top: 20px;
+    grid-column: 1;
+    grid-row: 1;
+    color: darkgray
+}
+
+.pop-price {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.pop-change-li {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.pop-change-symbol {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.pop-price-change-container{
+    display: flex;
+}
+
+.candlestick-container {
+    text-align: center;
+    margin-left: 120px;
+    
+}
+
