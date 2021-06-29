@@ -6,7 +6,12 @@ const WalletPie = ({wallet}) => {
 
 
     const temp = Number(wallet.total_cash)
-    const temp2 = Number(wallet.portfolio_value)
+    const temp2 = Number(wallet.portfolio_value[(wallet.portfolio_value.length-1)])
+
+// (wallet.portfolio_value.length-1)
+// const portVal = wallet.portfolio_value[(wallet.portfolio_value.length-1)]
+
+    
     const options = {
         chart: {
           type: "pie"
