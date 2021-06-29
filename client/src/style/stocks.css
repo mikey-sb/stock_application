@@ -5,7 +5,7 @@
     grid-auto-rows: minmax(20px, auto);
     align-items: center;
     width: 800px;
-
+    
 }
 
 .popular-ul {
@@ -16,7 +16,6 @@
     grid-auto-rows: minmax(20px, auto);
     align-items: center;
     justify-content: center;
-
 }
 
 .pop-price-change-container {
@@ -52,5 +51,11 @@
 
 .pop-price-change-container{
     display: flex;
+}
+
+.candlestick-container {
+    text-align: center;
+    margin-left: 120px;
+    
 }
 

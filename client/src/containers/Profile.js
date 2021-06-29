@@ -10,7 +10,7 @@ import { getStocks } from '../SharesServices'
 import '../style/profile.css'
 import { getCash } from '../WalletServices'
 
-const Profile = ({setAllOwnedStocks, allOwnedStocks}) => {
+const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet}) => {
  
     const [ownedStocks, setOwnedStocks] = useState([])
 
@@ -24,6 +24,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks}) => {
     
     return (
         <>
+        <h1 className="header">PROFILE</h1>
         <div className = "profile-wrapper">
         <div className = "profile-all-stock">
             <ProfileAllStock ownedStocks={ownedStocks}/>
@@ -46,7 +47,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks}) => {
         </div>
 
         <div className = "profile-wallet">
-            <ProfileWallet ownedStocks={ownedStocks}/>
+            <ProfileWallet setWallet={setWallet} wallet={wallet} ownedStocks={ownedStocks}/>
         </div>
 
         </div>

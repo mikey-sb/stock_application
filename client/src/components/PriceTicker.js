@@ -5,9 +5,6 @@ import { IconContext } from "react-icons";
 import "../style/ticker.css"
 
 const PriceTicker = ({yahooStock}) => {
-    
-
-    console?.log(yahooStock)
 
     const allYahooStocks = yahooStock.finance.result[0].quotes.map((quote, index) => {
         return (

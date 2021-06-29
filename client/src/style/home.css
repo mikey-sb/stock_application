@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
+
 .home-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -18,4 +21,10 @@
 .home-profile-container {
     grid-row: 2;
     grid-column: 2 / 4;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: darkgray;
 }

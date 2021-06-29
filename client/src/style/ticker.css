@@ -24,19 +24,23 @@
     to{ transform: translateX(1250px)}
 }
 
+
 .ticker-wrapper {
     display: inline-block;
     background-color: white;
     max-height: 40px;
-    width: 1000px;
+    width: 1170px;
    
     overflow-x: hidden;
+    overflow-y: hidden;
     border-width: 0px;
     border-right-width: 1px;
     border-left-width: 1px;
-    border-color: skyblue;
+    border-color: dodgerblue;
+    
     border-style: solid;
     margin-left: 130px;
+    margin-top: -16px;
 }
 
 .ticker1-container, 

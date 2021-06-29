@@ -19,13 +19,13 @@ const NavBar = ({yahooStock}) => {
         <div className="nav-container">      
             <ul className="nav-ul">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">HOME</Link>
                 </li>             
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/profile">PROFILE</Link>
                 </li>
                 <li>
-                    <Link to="/stocks">Stocks</Link>
+                    <Link to="/stocks">STOCKS</Link>
                 </li>
             </ul>
         </div>
@@ -35,6 +35,7 @@ const NavBar = ({yahooStock}) => {
             {/* {yahooStock ? <PriceTicker yahooStock={yahooStock}/> : null} */}
         
         </div>
+        <div className="nav-span"></div>
         </>
     )
 }

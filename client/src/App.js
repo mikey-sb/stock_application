@@ -5,6 +5,8 @@ import Profile from './containers/Profile'
 import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { getCash } from './WalletServices';
+
 function App() {
   const [allStock, setAllStock] = useState(null);
   const [selectedStock, setSelectedStock] = useState('');
@@ -13,7 +15,20 @@ function App() {
   const [yahooStock, setYahooStock] = useState(null);
   const [allOwnedStocks, setAllOwnedStocks] = useState([])
   const [yahooNews, setYahooNews] = useState(null)
+  const [wallet, setWallet] = useState(0);
+
+  useEffect(() => {
+      getCash()
+      .then((wallet) => {
+          setWallet(wallet[0])
+
+      })
+  }, [])
+
   const apiKey = '6OYBENRW75CQHHNZ'
+  const apiKey2 = 'BYBIX6SQ25IPZAUH'
+
+  
   const interval = '60min'
   const getStock = () => {
           fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
@@ -27,7 +42,7 @@ function App() {
       getStock()
   }, [])
   const getSelectedStockInfo = () => {
-    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=BYBIX6SQ25IPZAUH`)
+    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=${apiKey2}`)
     .then(res => res.json())
     .then(data =>setSelectedStockInfo(data))
     .catch((err) => {
@@ -81,8 +96,8 @@ getYahooNews()
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
-    {allStock ? <Route exact path="/stocks" render={() => <Stocks selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/stocks" render={() => <Stocks setWallet={setWallet} wallet={wallet} selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
     </Switch>
     </>
     </Router>

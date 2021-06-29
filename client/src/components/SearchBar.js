@@ -1,4 +1,5 @@
 import React from 'react'
+import "../style/stock-select.css"
 
 const SearchBar = ({setSelectedStock}) => {
 
@@ -9,8 +10,8 @@ const SearchBar = ({setSelectedStock}) => {
     }
 
     return (
-        <div>
-            <form className="form-container" id="stockForm" onSubmit={stockIsChanging}>
+        <div className="form-container" >
+            <form id="stockForm" onSubmit={stockIsChanging}>
 
                 {/* <label htmlFor="name">Symbol:</label>
 
@@ -18,7 +19,7 @@ const SearchBar = ({setSelectedStock}) => {
 
                 <label for="stocks">Choose a Stock:</label> */}
 
-                <select name="stocks" id="stockSelect">
+                <select name="stocks" id="stockSelect" class="stock-select">
                     <option value="IBM">IBM</option>
                     <option value="AAPL">AAPL</option>
                     <option value="GOOG">GOOG</option>
@@ -29,10 +30,20 @@ const SearchBar = ({setSelectedStock}) => {
                     <option value="NVDA">NVDA</option>
                     <option value="JPM">JPM</option>
                     <option value="MA">MA</option>
-                    <option value="PYPL">PYPL</option>
+                    <option value="GME">GME</option>
+                    <option value="FOX">FOX</option>
+                    <option value="MACK">MACK</option>
+                    <option value="OSIR">OSIR</option>
+                    <option value="NEO">NEO</option>
+                    <option value="NDAQ">NDAQ</option>
+                    <option value="LBIX">LBIX</option>
+                    <option value="IPDN">IPDN</option>
+                    <option value="FSC">FSC</option>
+                    <option value="PYPL">PYPL</option>  
                 </select>
+                <br></br>
 
-                <input type="submit" value="Search" id="save"/>
+                <input type="submit" value="Search" id="save" className="stock-search-submit"/>
 
             </form>
 

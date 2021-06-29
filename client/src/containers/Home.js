@@ -4,11 +4,11 @@ import '../style/home.css'
 import NewsFeed from '../components/NewsFeed'
 
 const Home = ({allStock, yahooNews}) => {
-    console.log(allStock)
+    
     return (
         <>
         
-        <h1>HOME</h1>
+        <h1 className="header">HOME</h1>
         <div className="home-container">
 
            
@@ -24,7 +24,7 @@ const Home = ({allStock, yahooNews}) => {
             <div className="home-profile-container">
                 <h1>Home Profile</h1>
             </div>
-           {/* < CandleStickChart allStock={allStock} /> */}
+           < CandleStickChart allStock={allStock} />
 
         </div>
         
