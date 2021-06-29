@@ -44,7 +44,7 @@ const ProfilePie = ({allOwnedStock, ownedStocks}) => {
 
     return (
         <div>
-            <h1>Pie Chart</h1>
+            {/* <h1>Pie Chart</h1> */}
             <div>
                 <PieChart highCharts={HighCharts} options={options} /> 
             </div>

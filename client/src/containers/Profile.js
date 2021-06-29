@@ -40,7 +40,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtSt
         </div> 
         
         <div className = "profile-performance">
-            <ProfilePerformance />
+            <ProfilePerformance ownedStocks={ownedStocks} wallet={wallet}/>
         </div>
         
         <div className = "profile-pie">

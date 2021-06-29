@@ -42,7 +42,7 @@ const WalletPie = ({wallet}) => {
 
     return (
         <div>
-            <h1>wallet pie</h1>
+            {/* <h1>wallet pie</h1> */}
             <PieChart HighCharts={HighCharts} options={options} />
         </div>
     )
