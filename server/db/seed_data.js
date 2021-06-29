@@ -15,6 +15,6 @@ db.stocks.insertMany(
 db.wallet.insertMany([
     {
         total_cash: 500,
-        portfolio_value: [100, 150, 140]
+        portfolio_value: [150]
     }
 ])
