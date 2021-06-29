@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { postStock } from "../SharesServices"
-import { updateCash } from "../WalletServices"
+import { updateWallet } from "../WalletServices"
 import "../style/stock-show.css"
 
 const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord, wallet, setWallet}) => {
@@ -19,7 +19,7 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         setAmountOfShares(event.target.value)
     }
 
-    const updateWallet = (priceOfBuy) => {
+    const updateWalletFunction = (priceOfBuy) => {
         const copyWallet = {...wallet}
         console.log(copyWallet)
         copyWallet.total_cash -= priceOfBuy
@@ -42,12 +42,12 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         }
         updateBoughtStocks(purchaseRecord)
         postStock(purchaseRecord)
-        const updatedWallet = updateWallet(priceOfBuy)
+        const updatedWallet = updateWalletFunction(priceOfBuy)
         console.log(updatedWallet)
         setWallet(updatedWallet)
         const copyWallet = {...updatedWallet}
         delete copyWallet._id
-        updateCash(wallet._id, copyWallet)
+        updateWallet(wallet._id, copyWallet)
         .then(result => console.log(result))
     }
 

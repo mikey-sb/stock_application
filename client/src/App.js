@@ -5,7 +5,7 @@ import Profile from './containers/Profile'
 import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { getCash } from './WalletServices';
+import { getWallet } from './WalletServices';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   const [wallet, setWallet] = useState(0);
 
   useEffect(() => {
-      getCash()
+      getWallet()
       .then((wallet) => {
           setWallet(wallet[0])
 

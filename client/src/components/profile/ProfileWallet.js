@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { updateStock } from '../../SharesServices';
-import {postCash, getCash, updateCash} from '../../WalletServices'
+import {postCash, getWallet, updateWallet} from '../../WalletServices'
 
 const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
 
@@ -36,7 +36,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             total_cash: wallet.total_cash, 
             profit: wallet.profit
         }
-        updateCash(wallet._id, copyTotal).then((data) => {
+        updateWallet(wallet._id, copyTotal).then((data) => {
             }
         )
     }

@@ -8,7 +8,7 @@ import ProfileWallet from '../components/profile/ProfileWallet'
 import { getStocks } from '../SharesServices'
 
 import '../style/profile.css'
-import { getCash } from '../WalletServices'
+import { getWallet } from '../WalletServices'
 
 const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet}) => {
  
