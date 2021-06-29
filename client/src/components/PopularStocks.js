@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaArrowUp } from 'react-icons/fa';
 import { FaArrowDown } from 'react-icons/fa';
+import "../style/stocks.css"
 
 const PopularStocks = ({yahooStock}) => {
     console?.log(yahooStock)
