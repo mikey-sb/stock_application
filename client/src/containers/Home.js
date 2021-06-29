@@ -3,7 +3,7 @@ import CandleStickChart from '../components/CandleStickChart'
 import '../style/home.css'
 import NewsFeed from '../components/NewsFeed'
 
-const Home = ({allStock, yahooNews}) => {
+const Home = ({allStock, yahooNews, wallet}) => {
     
     return (
         <>
@@ -14,7 +14,7 @@ const Home = ({allStock, yahooNews}) => {
            
            
             <div className="portfolio-value-container">
-                < StockChart allStock={allStock} />
+                < StockChart wallet={wallet} allStock={allStock} />
             </div>
            
             <div className="news-feed-container">

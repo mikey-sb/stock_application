@@ -19,8 +19,6 @@ const NewsFeed = ({yahooNews}) => {
 
     let allYahooNews = yahooNews.news.map((article, index) => {
 
-        console.log(newsGen())
-
         return (
             <div className="feed-container" key={index}>
                 <ul  className="feed-ul">

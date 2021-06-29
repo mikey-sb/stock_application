@@ -1,15 +1,17 @@
 import HighCharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official';
-const StockChart = ({allStock}) => {
+const StockChart = ({wallet}) => {
+
+    const portVal = wallet.portfolio_value[(wallet.portfolio_value.length-1)]
    
     const options = {
         title: {
-            text: 'Portfolio Value'
+            text: `Portfolio Value: $${portVal}`
           },
         xAxis: {
             categories: [],
             labels: {
-                rotation: 90
+                rotation: 0
             }
         },
         series: [{
@@ -21,28 +23,14 @@ const StockChart = ({allStock}) => {
     const chartTitle = {
         text: 'Portfolio'
     }
+
     const setChartOptions = () => {
-        if(allStock){
-            options["series"][0]["name"] = allStock["Meta Data"]["2. Symbol"]
-
-            let i = 0
-
-            //Add all times to array, then go through and remove every n time to display on the x axis with enough space
-            let tempTimeArray = []
-            let tempValuesArray = []
-
-            let reversedTimeSeries = Object.keys(allStock["Time Series (5min)"]).reverse();
-
-            for(let key of reversedTimeSeries){
-                let pricePoint = allStock["Time Series (5min)"][key]["1. open"]
-                let timeAxis = key.substring(10, key.length-3)
-                options["series"][0]["data"].push(Number(pricePoint))
-                options["xAxis"]["categories"].push(timeAxis)
-            }
-            }
+        for(let i = 0; i < (wallet.portfolio_value.length); i++){
+            options["series"][0]["data"].push(wallet.portfolio_value[i])
         }
+    }
     const renderChart = () => {
-        if(allStock){
+        if(wallet){
             setChartOptions()
             return <HighchartsReact highcharts={HighCharts} options={options} title={chartTitle}/>
         }
@@ -50,10 +38,6 @@ const StockChart = ({allStock}) => {
     return (
         <>
             <div className="data-container">
-            <ul>
-                {/* <li>{allStock ? allStock["Meta Data"]["2. Symbol"] : null}</li> */}
-                {/* <li>{allStock ? allStock["Time Series (5min)"]["2021-06-23 20:00:00"]["1. open"] : null}</li> */}
-            </ul>
             {renderChart()}
             </div>
         </>
