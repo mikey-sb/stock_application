@@ -32,7 +32,7 @@ const NavBar = ({yahooStock}) => {
         </div>
         <div className="ticker-container-nav">
 
-            {yahooStock ? <PriceTicker yahooStock={yahooStock}/> : null}
+            {/* {yahooStock ? <PriceTicker yahooStock={yahooStock}/> : null} */}
         
         </div>
         </>
