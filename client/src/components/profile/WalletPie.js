@@ -25,7 +25,7 @@ const WalletPie = ({wallet}) => {
               cursor: 'pointer',
               dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: $. {point.y:.1f}'
+                format: '<p>{point.name}</p>: $. {point.y:.1f}'
               }
             }
           },

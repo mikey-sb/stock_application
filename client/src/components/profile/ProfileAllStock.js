@@ -7,19 +7,22 @@ const ProfileAllStock = ({boughtStockRecord, ownedStocks}) => {
 
     const renderStocks = ownedStocks.map(stock => {
         return (
-            <div key={stock._id}>
-            <p>Stock: {stock.stock}</p>
-            <p>Total Buy Price: ${stock.buyPrice}</p>
-            <p>Number of Shares: {stock.numberOfShares}</p>
-            <p>Stock Price: ${stock.singlePrice}</p>
-            <br></br>
+            <>
+            <div key={stock._id} className="th-container">
+                <p>Stock: {stock.stock}</p>
+                <p className="th-buy-price">Buy Price: ${stock.buyPrice}</p>
+                <p>Shares: {stock.numberOfShares}</p>
+                <p>Price: ${stock.singlePrice}</p>
             </div>
+            <div className="history-span"></div>
+            </>
+
         )
     })
 
     return (
         <div>
-            <h1>ALL STOCKS OWNED</h1>
+            <h1 className="header">TRANSACTION HISTORY</h1>
             <ul>
                 {renderStocks}
             </ul>

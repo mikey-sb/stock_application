@@ -17,7 +17,7 @@
 
 .profile-wallet {
     grid-column: 3;
-    grid-row: 2;
+    grid-row: 1;
 }
 
 .profile-change {
@@ -33,4 +33,65 @@
 .profile-all-stock {
     grid-column: 1 / 4;
     grid-row: 4;
+    margin-top: -100px;
+}
+
+.th-buy-price {
+    color: darkgray
+}
+
+.th-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    /* background-color: darkgray; */
+}
+
+.history-span {
+    height: 1px;
+    width: 1200px;
+    background-color: dodgerblue;
+    margin-left: 120px;
+}
+.deposit-button, .withdraw-button{
+    width: 140px;
+    /* background-color: green; */
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    border-width: 0px 2px;
+    
+    background-color: white;
+    border-style: solid;
+}
+.withdraw-button{
+    border-color: red;
+    color: red;   
+}
+
+.deposit-button {
+    border-color: green;
+    color: green;
+    margin-right: 20px;
+}
+
+.wallet-form {
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif'
+}
+
+.wallet-input {
+    width: 300px;
+    height: 30px;
+    background-color: white;
+    margin-bottom: 5px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-color: darkgray;
+    text-align: center;
+    font-size: 20px;
+}
+
+.wallet-total-cash {
+    font-size: 20px;
 }
