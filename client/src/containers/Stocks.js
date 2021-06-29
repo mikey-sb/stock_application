@@ -98,6 +98,7 @@ const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInf
                         {/* {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null} */}
                     </div>
                     <div className="popular-container">
+                        <h1 className="pop-header">TRENDING STOCKS</h1>
                         {renderPopularStock()}
                     </div>
                 </div>

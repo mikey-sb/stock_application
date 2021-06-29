@@ -8,6 +8,7 @@ const PriceTicker = ({yahooStock}) => {
 
     const allYahooStocks = yahooStock.finance.result[0].quotes.map((quote, index) => {
         return (
+            <>
             <ul key={index} className="ticker-ul">
                 {/* <li>Company: {quote.shortName}</li> */}
                 <li className="ticker-symbol">{quote.symbol}:</li>
@@ -26,6 +27,7 @@ const PriceTicker = ({yahooStock}) => {
                         <FaArrowDown />
                     </li>}     
             </ul>
+            </>
         )
         })
     
