@@ -11,7 +11,7 @@ const ProfilePie = ({allOwnedStock, ownedStocks}) => {
 
     //     })
     // })
-
+    // console.log(ownedStocks)
 
     const options = {
         chart: {
@@ -26,7 +26,7 @@ const ProfilePie = ({allOwnedStock, ownedStocks}) => {
               cursor: 'pointer',
               dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                format: '<b>{point.name}</b>: $. {point.y:.1f}'
               }
             }
           },
