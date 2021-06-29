@@ -8,7 +8,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { getCash } from './WalletServices';
 
 function App() {
-
   const [allStock, setAllStock] = useState(null);
   const [selectedStock, setSelectedStock] = useState('');
   const [selectedStockInfo, setSelectedStockInfo] = useState(null)
@@ -31,8 +30,6 @@ function App() {
 
   
   const interval = '60min'
-
-
   const getStock = () => {
           fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
           .then(res => res.json())
@@ -44,7 +41,6 @@ function App() {
   useEffect(() => {
       getStock()
   }, [])
-
   const getSelectedStockInfo = () => {
     fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${selectedStock}&interval=5min&apikey=${apiKey2}`)
     .then(res => res.json())
@@ -53,35 +49,30 @@ function App() {
       console.log(err)
     })
   }
-
   const updateBoughtStocks = (newStock) => {
     const update = [...boughtStockRecord, newStock]
     setBoughtStockRecord(update)
   }
-
   useEffect(() => {
     getSelectedStockInfo()
   }, [selectedStock])
-
   const getYahooStock = () => {
     fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US", {
       "method": "GET",
       "headers": {
         "x-rapidapi-key": "47b4d6a0ecmshd4eba3e71b887d7p14514fjsn24d3525e5dc1",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-	}
+  }
 })
 .then(res => res.json())
 .then(data =>setYahooStock(data))
 .catch(err => {
-	console.error(err);
+  console.error(err);
 })
 }
-
 useEffect(() => {
   getYahooStock()
 }, [])
-
 const getYahooNews = () => {
   fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
     "method": "GET",
@@ -96,16 +87,13 @@ const getYahooNews = () => {
 console.error(err);
 })
 }
-
 useEffect(() => {
 getYahooNews()
 }, [])
-
   return (
     <Router>
     <>
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
-    
     <Switch>
     {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
@@ -115,5 +103,21 @@ getYahooNews()
     </Router>
   );
 }
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
