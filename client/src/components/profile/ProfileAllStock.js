@@ -3,6 +3,8 @@ import { getStocks } from '../../SharesServices'
 
 const ProfileAllStock = ({boughtStockRecord, ownedStocks}) => {
 
+    // console.log(ownedStocks)
+
     const renderStocks = ownedStocks.map(stock => {
         return (
             <div key={stock._id}>
