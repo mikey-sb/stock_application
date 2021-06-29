@@ -30,8 +30,9 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         event.preventDefault()
         const nameOfStock = event.target[0]["form"][0]["value"]
         const priceOfBuy = Number(event.target[0]["form"][1]["value"])
-        const numOfStock = event.target[0]["form"][2]["value"]
-        const singleStockPrice = event.target[0]["form"][3]["value"]
+        const numOfStock = Number(event.target[0]["form"][2]["value"])
+        console.log(typeof numOfStock)
+        const singleStockPrice = Number(event.target[0]["form"][3]["value"])
         const purchaseRecord = {
             "stock": nameOfStock,
             "buyPrice": priceOfBuy,
@@ -41,10 +42,12 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         updateBoughtStocks(purchaseRecord)
         postStock(purchaseRecord)
         const updatedWallet = updateWallet(priceOfBuy)
-        setWallet(updateWallet)
-        // updateCash(wallet._id, copyWallet)
-        // .then(result => console.log(result))
-        
+        console.log(updatedWallet)
+        setWallet(updatedWallet)
+        const copyWallet = {...updatedWallet}
+        delete copyWallet._id
+        updateCash(wallet._id, copyWallet)
+        .then(result => console.log(result))
     }
 
     return (
