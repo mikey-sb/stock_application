@@ -23,6 +23,10 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         const copyWallet = {...wallet}
         console.log(copyWallet)
         copyWallet.total_cash -= priceOfBuy
+        console.log(copyWallet.portfolio_value)
+        const previousPortfolioValue = wallet.portfolio_value[(wallet.portfolio_value.length-1)]
+        const newPortValue = previousPortfolioValue + priceOfBuy
+        copyWallet.portfolio_value.push(newPortValue)
         
         return copyWallet
     }
@@ -32,7 +36,6 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         const nameOfStock = event.target[0]["form"][0]["value"]
         const priceOfBuy = Number(event.target[0]["form"][1]["value"])
         const numOfStock = Number(event.target[0]["form"][2]["value"])
-        console.log(typeof numOfStock)
         const singleStockPrice = Number(event.target[0]["form"][3]["value"])
         const purchaseRecord = {
             "stock": nameOfStock,

@@ -4,7 +4,6 @@ import { FaArrowDown } from 'react-icons/fa';
 import "../style/stocks.css"
 
 const PopularStocks = ({yahooStock}) => {
-    console?.log(yahooStock)
 
     const allYahooStocks = yahooStock.finance.result[0].quotes.map((quote, index) => {
 

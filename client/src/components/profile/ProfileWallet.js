@@ -43,7 +43,6 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
         setInputNumber(event.target.value)
     }
 
-
     return (
         <form onSubmit={handleOnSubmit}>
             <h1>WALLET</h1>
@@ -55,6 +54,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             <button onClick={() => withdraw()}>Withdraw</button>
         <p>Total Cash: ${wallet.total_cash}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
+        {/* <p>Portfolio Value: {wallet.portfolio_value[(wallet.portfolio_value.length - 1)]}</p> */}
         </form>
     )
 }
