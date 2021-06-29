@@ -69,7 +69,7 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
                 <input className = "buy-amount" type="number" name="amountStock" onChange={handleSharesAmountChange} className="stock-buy-input"required/>
                 <input className = "buy-amount" type="hidden" name="singlePrice" value={selectedStockInfo["Time Series (5min)"][firstKey]["1. open"]}></input>
                 <br></br>
-                <input type="submit" name="buy" value="BUY" className="buy-submit-button"/>
+                <input type="submit" name="buy" value="BUY" className="button"/>
             </form>
         </>
     )
