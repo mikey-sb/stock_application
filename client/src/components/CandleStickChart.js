@@ -11,10 +11,8 @@ const CandleStickChart = ({allStock}) => {
     if ("Meta Data" in allStock) {
 
         let time_series_array = Object.keys(allStock["Time Series (5min)"])
-        // console.log(time_series_array)
 
         let data_array = Object.values(allStock["Time Series (5min)"])
-        // console.log(data_array)
 
         let stockSymbol = Object.values(allStock["Meta Data"]["2. Symbol"])
         let ssj = String(stockSymbol.join(''))

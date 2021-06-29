@@ -5,7 +5,7 @@ import Profile from './containers/Profile'
 import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { getCash } from './WalletServices';
+import { getWallet } from './WalletServices';
 
 function App() {
   const [allStock, setAllStock] = useState(null);
@@ -18,7 +18,7 @@ function App() {
   const [wallet, setWallet] = useState(0);
 
   useEffect(() => {
-      getCash()
+      getWallet()
       .then((wallet) => {
           setWallet(wallet[0])
 
@@ -95,7 +95,7 @@ getYahooNews()
     <>
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     <Switch>
-    {allStock ? <Route exact path="/" render={() => <Home allStock={allStock} yahooNews={yahooNews}/>}/> : null }
+    {allStock ? <Route exact path="/" render={() => <Home wallet={wallet} allStock={allStock} yahooNews={yahooNews}/>}/> : null }
     {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
     {allStock ? <Route exact path="/stocks" render={() => <Stocks setWallet={setWallet} wallet={wallet} selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
     </Switch>

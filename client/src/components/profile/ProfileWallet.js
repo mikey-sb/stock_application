@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { updateStock } from '../../SharesServices';
-import {postCash, getCash, updateCash} from '../../WalletServices'
+import {postCash, getWallet, updateWallet} from '../../WalletServices'
 
 const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
 
@@ -11,7 +11,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
 
             return totalValue + Number(stock.buyPrice)
         }, 0)
-        // console.log(portfolioValue)
+        
         return portfolioValue.toFixed(2)
     }
 
@@ -33,7 +33,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             total_cash: wallet.total_cash, 
             profit: wallet.profit
         }
-        updateCash(wallet._id, copyTotal).then((data) => {
+        updateWallet(wallet._id, copyTotal).then((data) => {
             }
         )
     }
@@ -41,7 +41,6 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
     const handleNumberInput = (event) => {
         setInputNumber(event.target.value)
     }
-
 
     return (
         <form onSubmit={handleOnSubmit} className="wallet-form">
@@ -56,6 +55,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             </button>
         <p className="wallet-total-cash">Total Cash: ${wallet.total_cash}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
+        {/* <p>Portfolio Value: {wallet.portfolio_value[(wallet.portfolio_value.length - 1)]}</p> */}
         </form>
     )
 }
