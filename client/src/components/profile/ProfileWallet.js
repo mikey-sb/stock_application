@@ -44,15 +44,17 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
 
 
     return (
-        <form onSubmit={handleOnSubmit}>
-            <h1>WALLET</h1>
-            <input type="number" onChange={handleNumberInput} />
-
-            <button onClick={() => deposit()}>
-          Deposit
+        <form onSubmit={handleOnSubmit} className="wallet-form">
+            <h1 className="header">WALLET</h1>
+            <input type="number" onChange={handleNumberInput} className="wallet-input" placeholder=""/>
+            <br></br>
+            <button onClick={() => deposit()} className="deposit-button">
+                Deposit
             </button>
-            <button onClick={() => withdraw()}>Withdraw</button>
-        <p>Total Cash: ${wallet.total_cash}</p>
+            <button onClick={() => withdraw()} className="withdraw-button">
+                Withdraw
+            </button>
+        <p className="wallet-total-cash">Total Cash: ${wallet.total_cash}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
         </form>
     )
