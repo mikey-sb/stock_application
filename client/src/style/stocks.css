@@ -53,9 +53,69 @@
     display: flex;
 }
 
+.stock-display-container {
+    display: flex;
+    margin-top: -90px;
+}
+
 .candlestick-container {
     text-align: center;
-    margin-left: 120px;
+    margin-left: 20px;   
+    margin-top: 100px;
+}
+
+.search-display-container {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 40px;
+    margin-top: 100px;
+}
+
+.display-stock-price {
+    color: dodgerblue;
+    text-align: center;
+    margin-left: -40px;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.buy-button {
+    border-color: dodgerblue;
+    border-width: 0px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    transition: border-width 0.1s linear;
+    background-color: white;
+    color: dodgerblue;
+}
+
+.buy-button-container {
+    text-align: center;
+    margin-left: -40px;
+}
+
+.search-container {
+    max-height:180px;
+}
+
+
+.buy-form-container {
+    position: absolute;
+    left: 1120px;
+    top: 420px;
+    text-align: center;
+    font-size: 18px;
     
+}
+
+.animate {
+    animation-name: scroll;
+    animation-duration: 30s;
 }
 

@@ -70,7 +70,8 @@ const CandleStickChart = ({allStock}) => {
             },
 
             chart: {
-                width: 1200
+                width: 1050,
+                
             },
 
             xAxis: [{resize: {
