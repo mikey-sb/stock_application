@@ -29,9 +29,10 @@ const PopularStocks = ({yahooStock}) => {
                             <FaArrowDown />
                         </li>}     
             </ul>
-            <div className="pop-span"></div>
 
         </div>
+        <div className="pop-span"></div>
+
         
         </>
     )

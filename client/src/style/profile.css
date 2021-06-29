@@ -36,22 +36,35 @@
     margin-top: -100px;
 }
 
+
+
 .th-buy-price {
     color: darkgray
 }
 
+.th-price {
+    color: darkgray
+    
+}
+
 .th-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    margin-left: 250px;
     /* background-color: darkgray; */
 }
+
+
+
 
 .history-span {
     height: 1px;
     width: 1200px;
     background-color: dodgerblue;
     margin-left: 120px;
+    
 }
 .deposit-button, .withdraw-button{
     width: 140px;
@@ -95,3 +108,5 @@
 .wallet-total-cash {
     font-size: 20px;
 }
+
+
