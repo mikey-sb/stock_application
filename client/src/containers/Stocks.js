@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
 import SearchDisplay from '../components/SearchDisplay'
 import CandleStickChart from '../components/CandleStickChart'
-import StockGainer from '../components/StockGainer'
 import {useState} from 'react'
 import BuyStockForm from '../components/BuyStockForm'
 import PopularStocks from '../components/PopularStocks'
@@ -97,8 +96,9 @@ const Stocks = ({setWallet, selectedStock, setSelectedStock, setSelectedStockInf
                     <div className="trending-container">
                         {/* {yahooStock ? <StockGainer yahooStock={yahooStock}/> : null} */}
                     </div>
+                    <h1 className="pop-header">TRENDING STOCKS</h1>
+
                     <div className="popular-container">
-                        <h1 className="pop-header">TRENDING STOCKS</h1>
                         {renderPopularStock()}
                     </div>
                 </div>

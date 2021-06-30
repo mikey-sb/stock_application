@@ -6,7 +6,6 @@ import Stocks from './containers/Stocks'
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { getWallet } from './WalletServices';
-
 function App() {
   const [allStock, setAllStock] = useState(null);
   const [selectedStock, setSelectedStock] = useState('');
@@ -16,19 +15,14 @@ function App() {
   const [allOwnedStocks, setAllOwnedStocks] = useState([])
   const [yahooNews, setYahooNews] = useState(null)
   const [wallet, setWallet] = useState(0);
-
   useEffect(() => {
       getWallet()
       .then((wallet) => {
           setWallet(wallet[0])
-
       })
   }, [])
-
   const apiKey = '6OYBENRW75CQHHNZ'
   const apiKey2 = 'BYBIX6SQ25IPZAUH'
-
-  
   const interval = '60min'
   const getStock = () => {
           fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
@@ -104,20 +98,3 @@ getYahooNews()
   );
 }
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

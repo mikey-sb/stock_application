@@ -4,15 +4,15 @@
     gap: 10px;
     grid-auto-rows: minmax(20px, auto);
     align-items: center;
-    width: 800px;
-    
+    width: 800px;   
+    margin-left: 100px; 
 }
 
 .pop-span {
     width: 600px;
     height: 1px;
-    margin-top: -30px;
-    margin-left: 100px;
+    margin-top: 0px;
+    margin-left: 120px;
     background-color: dodgerblue;
 
 }
@@ -38,7 +38,7 @@
     margin-bottom: 15px;
 }
 .pop-name {
-    margin-top: 20px;
+    margin-top: 27px;
     grid-column: 1;
     grid-row: 1;
     color: darkgray
@@ -47,7 +47,8 @@
 .pop-price {
     grid-column: 2;
     grid-row: 1;
-    color: dodgerblue
+    color: dodgerblue;
+    margin-left: 20px;
 }
 
 .pop-change-li {
@@ -88,7 +89,7 @@
 .display-stock-price {
     color: dodgerblue;
     text-align: center;
-    margin-left: -40px;
+    margin-left: -0px;
     font-size: 20px;
     margin-top: 40px;
 }
@@ -110,9 +111,10 @@
     color: dodgerblue;
 }
 
+
 .buy-button-container {
     text-align: center;
-    margin-left: -40px;
+    left: 200px;
 }
 
 .search-container {
@@ -137,6 +139,18 @@
 .pop-header {
     font-family: 'Montserrat', 'sans-serif';
     color: darkgray;
-    margin-left: 280px;
+    text-align: center;
 }
+
+.test {
+    font-size: 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.display-stock-ul {
+    text-align: center;
+    align-items: center;
+}
+
+
 

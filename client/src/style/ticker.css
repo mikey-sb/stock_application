@@ -21,7 +21,7 @@
 
 @keyframes scroll {
     from{ transform: translateX(-4700px)}
-    to{ transform: translateX(1250px)}
+    to{ transform: translateX(1350px)}
 }
 
 
@@ -29,7 +29,7 @@
     display: inline-block;
     background-color: white;
     max-height: 40px;
-    width: 1170px;
+    width: 1270px;
    
     overflow-x: hidden;
     overflow-y: hidden;

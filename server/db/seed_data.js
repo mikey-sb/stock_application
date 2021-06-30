@@ -1,6 +1,5 @@
 use shares;
 db.dropDatabase();
-
 db.stocks.insertMany(
     [
         { 
@@ -23,7 +22,6 @@ db.stocks.insertMany(
         }
     ]
 )
-
 db.wallet.insertMany([
     {
         total_cash: 500,

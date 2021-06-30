@@ -1,5 +1,6 @@
 .feed-title-li {
     width: 350px;
+    text-decoration: none;
 }
 
 .feed-date-li {
@@ -7,3 +8,16 @@
     font-size: 12px;
     color: darkgray
 }
+
+.news-feed-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(200px, auto);    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
