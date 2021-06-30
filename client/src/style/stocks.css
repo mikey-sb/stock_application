@@ -14,7 +14,6 @@
     margin-top: 0px;
     margin-left: 120px;
     background-color: dodgerblue;
-
 }
 
 .popular-ul {
@@ -150,6 +149,12 @@
 .display-stock-ul {
     text-align: center;
     align-items: center;
+}
+
+.buy-amount {
+    font-size: 20px;
+    font-family: 'Montserrat', 'sans-serif';  
+     margin-bottom: 50px;
 }
 
 

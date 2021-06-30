@@ -6,7 +6,7 @@ const StockChart = ({wallet}) => {
    
     const options = {
         title: {
-            text: `Portfolio Value: $${portVal}`
+            text: `Portfolio Value: $${portVal.toFixed(2)}`
           },
         xAxis: {
             categories: [],

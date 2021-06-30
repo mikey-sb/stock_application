@@ -54,10 +54,10 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
                 <label className="form-label">{`${selectedStockInfo["Meta Data"]["2. Symbol"]}`}</label>
                 <input type="hidden" name="stockName" value={selectedStockInfo["Meta Data"]["2. Symbol"]}></input>
                 <br></br>
-                <label>{`Price: $${getPrice().toFixed(2)}`}</label>
+                <label className = 'buy-amount'>{`Price: $${getPrice().toFixed(2)}`}</label>
                 <br></br>
-                <label>Wallet: ${wallet.total_cash.toFixed(2)}</label>
-                <input type="hidden" name="amountPrice" value={getPrice()}></input>
+                <label className = 'buy-amount'>Wallet: ${wallet.total_cash.toFixed(2)}</label>
+                <input type="hidden" name="amountPrice" value={getPrice()} className = "buy-amount"></input>
                 <br></br>
                 <label>Shares: </label><br></br>
                 <input className = "buy-amount" type="number" name="amountStock" onChange={handleSharesAmountChange} className="stock-buy-input"required/>
