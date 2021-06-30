@@ -48,8 +48,6 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             <button onClick={() => withdraw()} className="button">
                 Withdraw
             </button>
-<<<<<<< HEAD
-=======
             {isLoaded ? 
                 <div class="main">
             <div class="loader active">
@@ -60,7 +58,6 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
   </div>
   </div> : null}
             </div>
->>>>>>> develop
         <p className="wallet-total-cash">Total Cash: ${wallet.total_cash.toFixed(2)}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
         {/* <p>Portfolio Value: {wallet.portfolio_value[(wallet.portfolio_value.length - 1)]}</p> */}
