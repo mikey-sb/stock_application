@@ -14,6 +14,7 @@ import { getWallet } from '../WalletServices'
 const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtStockRecord}) => {
  
     const [ownedStocks, setOwnedStocks] = useState([])
+    const [uniqueStocks, setUniqueStocks] = useState([])
 
     useEffect(() => {
         getStocks()
@@ -22,6 +23,38 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtSt
             setAllOwnedStocks(ownedStocks)
         })
     }, [])
+
+    useEffect(() => {
+        if(ownedStocks.length > 0){
+            setUniqueStocks(getUniqueStocks())
+        }}, [ownedStocks])
+
+    const getUniqueStocks = () => {
+        console.log(ownedStocks)
+        const uniqueStocksArray = [...new Set(ownedStocks.map((stock) => stock.stock))].map((stock) => { 
+            // let firstKey = Object.keys(stock)
+            return {
+            
+            "stock": stock,
+            "buyPrice": 0,
+            "numberOfShares": 0,
+            "singlePrice": 0
+        }
+        })
+        for(let stock of ownedStocks){
+
+            for(let uniqueStock of uniqueStocksArray){
+                
+                if(stock.stock === uniqueStock.stock){
+                    uniqueStock.buyPrice += stock.buyPrice
+                    uniqueStock.numberOfShares += stock.numberOfShares
+
+                }
+            }
+        }
+        console.log(uniqueStocksArray)
+        return uniqueStocksArray;
+    }
     
     return (
         <>
@@ -44,7 +77,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtSt
         </div>
          */}
         <div className = "profile-pie">
-            <ProfilePie ownedStocks={ownedStocks}/>
+            <ProfilePie ownedStocks={uniqueStocks}/>
         </div>
 
         <div className = "profile-wallet">
