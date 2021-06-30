@@ -9,10 +9,10 @@ const ProfileAllStock = ({boughtStockRecord, ownedStocks}) => {
         return (
             <>
             <div key={stock._id} className="th-container">
-                <p>Stock: {stock.stock}</p>
-                <p className="th-buy-price">Buy Price: ${stock.buyPrice}</p>
-                <p>Shares: {stock.numberOfShares}</p>
-                <p>Price: ${stock.singlePrice}</p>
+                <p classname="th-stock">Stock: {stock.stock}</p>
+                <p className="th-buy-price">Buy Price: ${stock.buyPrice.toFixed(2)}</p>
+                <p className="th-shares">Shares: {stock.numberOfShares}</p>
+                <p className="th-price">Price: ${stock.singlePrice}</p>
             </div>
             <div className="history-span"></div>
             </>
