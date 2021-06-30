@@ -15,7 +15,7 @@ const StockChart = ({wallet}) => {
             }
         },
         series: [{
-            name: 'Profit',
+            name: 'Portfolio Value',
             data: [],
             
         }]
