@@ -53,7 +53,7 @@ const ProfileWallet = ({ownedStocks, setWallet, wallet}) => {
             <button onClick={() => withdraw()} className="withdraw-button">
                 Withdraw
             </button>
-        <p className="wallet-total-cash">Total Cash: ${wallet.total_cash}</p>
+        <p className="wallet-total-cash">Total Cash: ${wallet.total_cash.toFixed(2)}</p>
         <p>Portfolio Value: ${getPortfolioTotal()}</p>
         {/* <p>Portfolio Value: {wallet.portfolio_value[(wallet.portfolio_value.length - 1)]}</p> */}
         </form>

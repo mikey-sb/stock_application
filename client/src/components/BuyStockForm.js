@@ -52,6 +52,7 @@ const BuyStockForm = ({selectedStockInfo, updateBoughtStocks, boughtStockRecord,
         delete copyWallet._id
         updateWallet(wallet._id, copyWallet)
         .then(result => console.log(result))
+        
     }
 
     return (

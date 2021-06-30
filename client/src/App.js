@@ -60,7 +60,7 @@ function App() {
     fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "47b4d6a0ecmshd4eba3e71b887d7p14514fjsn24d3525e5dc1",
+        "x-rapidapi-key": "7f1f9f12f0mshb61724ebaadc332p1f6658jsnd12fd2c73285",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
   }
 })
@@ -77,7 +77,7 @@ const getYahooNews = () => {
   fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "47b4d6a0ecmshd4eba3e71b887d7p14514fjsn24d3525e5dc1",
+      "x-rapidapi-key": "7f1f9f12f0mshb61724ebaadc332p1f6658jsnd12fd2c73285",
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
 }
 })
