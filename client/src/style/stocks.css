@@ -89,7 +89,7 @@
 .display-stock-price {
     color: dodgerblue;
     text-align: center;
-    margin-left: -40px;
+    margin-left: -0px;
     font-size: 20px;
     margin-top: 40px;
 }
@@ -111,9 +111,10 @@
     color: dodgerblue;
 }
 
+
 .buy-button-container {
     text-align: center;
-    margin-left: -40px;
+    left: 200px;
 }
 
 .search-container {
@@ -139,6 +140,16 @@
     font-family: 'Montserrat', 'sans-serif';
     color: darkgray;
     text-align: center;
+}
+
+.test {
+    font-size: 20px;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.display-stock-ul {
+    text-align: center;
+    align-items: center;
 }
 
 

@@ -21,6 +21,7 @@ const NewsFeed = ({yahooNews}) => {
 
         return (
             <div className="feed-container" key={index}>
+                
                 <ul  className="feed-ul">
 
                     <li>
@@ -42,8 +43,10 @@ const NewsFeed = ({yahooNews}) => {
 
          console?.log(yahooNews)
     return (
+
         <div>
-        <h1>News</h1> 
+                <h1 className="header">News</h1> 
+
             {allYahooNews}
         </div>
     )
