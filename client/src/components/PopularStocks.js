@@ -37,6 +37,7 @@ const PopularStocks = ({yahooStock}) => {
         </>
     )
     })
+    
     return (
         <div>
             {allYahooStocks}
