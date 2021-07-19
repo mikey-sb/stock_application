@@ -3,7 +3,9 @@ import OwnedStocks from '../components/OwnedStocks'
 import '../style/home.css'
 import NewsFeed from '../components/NewsFeed'
 
-const Home = ({allStock, yahooNews, wallet}) => {
+const Home = ({allStock, yahooNews, wallet, allOwnedStocksOnce}) => {
+
+    console?.log(allOwnedStocksOnce)
     
     return (
         <>
@@ -22,7 +24,7 @@ const Home = ({allStock, yahooNews, wallet}) => {
 
             <div className="home-profile-container">
                 <h1 className="header">Stocks Owned</h1>
-                <OwnedStocks />
+                <OwnedStocks allOwnedStocksOnce={allOwnedStocksOnce}/>
             </div>
 
         </div>

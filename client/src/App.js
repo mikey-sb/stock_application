@@ -13,6 +13,7 @@ function App() {
   const [boughtStockRecord, setBoughtStockRecord] = useState([])
   const [yahooStock, setYahooStock] = useState(null);
   const [allOwnedStocks, setAllOwnedStocks] = useState([])
+  const [allOwnedStocksOnce, setAllOwnedStocksOnce] = useState([])
   const [yahooNews, setYahooNews] = useState(null)
   const [wallet, setWallet] = useState(0);
   useEffect(() => {
@@ -89,8 +90,20 @@ getYahooNews()
     <>
     {yahooStock ? <NavBar yahooStock={yahooStock}/> : null}
     <Switch>
-    {allStock ? <Route exact path="/" render={() => <Home wallet={wallet} allStock={allStock} yahooNews={yahooNews}/>}/> : null }
-    {allStock ? <Route exact path="/profile" render={() => <Profile setWallet={setWallet} wallet={wallet} allStock={allStock} boughtStockRecord={boughtStockRecord} setAllOwnedStocks={setAllOwnedStocks}/>}/> : null }
+    {allStock ? <Route exact path="/" render={() => 
+    <Home wallet={wallet} 
+    allStock={allStock} 
+    yahooNews={yahooNews} 
+    allOwnedStocks={allOwnedStocks} 
+    allOwnedStocksOnce={allOwnedStocksOnce}/>}/> : null }
+    
+    {allStock ? <Route exact path="/profile" render={() => <
+      Profile setWallet={setWallet} 
+      wallet={wallet} 
+      allStock={allStock} 
+      boughtStockRecord={boughtStockRecord} 
+      setAllOwnedStocks={setAllOwnedStocks} 
+      setAllOwnedStocksOnce={setAllOwnedStocksOnce}/>}/> : null }
     {allStock ? <Route exact path="/stocks" render={() => <Stocks setWallet={setWallet} wallet={wallet} selectedStock={selectedStock} setSelectedStock={setSelectedStock} selectedStockInfo={selectedStockInfo} updateBoughtStocks={updateBoughtStocks} yahooStock={yahooStock} boughtStockRecord={boughtStockRecord} allOwnedStocks={allOwnedStocks}/>}/> : null }
     </Switch>
     </>

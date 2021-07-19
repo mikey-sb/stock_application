@@ -11,10 +11,12 @@ import { getStocks } from '../SharesServices'
 import '../style/profile.css'
 import { getWallet } from '../WalletServices'
 
-const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtStockRecord}) => {
+const Profile = ({setAllOwnedStocks, setAllOwnedStocksOnce, allOwnedStocks, wallet, setWallet, boughtStockRecord}) => {
  
     const [ownedStocks, setOwnedStocks] = useState([])
     const [uniqueStocks, setUniqueStocks] = useState([])
+
+    
 
     useEffect(() => {
         getStocks()
@@ -27,6 +29,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtSt
     useEffect(() => {
         if(ownedStocks.length > 0){
             setUniqueStocks(getUniqueStocks())
+            setAllOwnedStocksOnce(getUniqueStocks())
         }}, [ownedStocks])
 
     const getUniqueStocks = () => {
@@ -56,6 +59,7 @@ const Profile = ({setAllOwnedStocks, allOwnedStocks, wallet, setWallet, boughtSt
         return uniqueStocksArray;
     }
     
+
     return (
         <>
         <h1 className="header">PROFILE</h1>
