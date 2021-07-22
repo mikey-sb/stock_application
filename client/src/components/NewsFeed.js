@@ -10,6 +10,8 @@ const NewsFeed = ({yahooNews}) => {
 
     let img_list = [news1, news2, news3, news4, news5]
 
+    console?.log(yahooNews)
+
 
 
     let newsGen = (() => {

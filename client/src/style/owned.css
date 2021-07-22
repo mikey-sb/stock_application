@@ -4,3 +4,20 @@
     background-color: dodgerblue;
     margin-top: 100px;
 }
+
+.all-owned-span{
+    width: 800px;
+    height: 1px;
+    background-color: dodgerblue;
+    
+}
+
+.th-container-owned {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    margin-left: 50px;
+    /* background-color: darkgray; */
+}
+

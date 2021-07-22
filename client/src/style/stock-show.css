@@ -30,6 +30,12 @@
 .form-label {
     color: darkgray;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+
+.buy-amount{
+    margin-bottom: 20px;
+}
+
+
 
