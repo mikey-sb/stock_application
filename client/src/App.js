@@ -3,6 +3,7 @@ import Home from './containers/Home'
 import NavBar from './components/NavBar';
 import Profile from './containers/Profile'
 import Stocks from './containers/Stocks'
+import ApiKeys from './ApiKeys';
 import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { getWallet } from './WalletServices';
@@ -22,8 +23,8 @@ function App() {
           setWallet(wallet[0])
       })
   }, [])
-  const apiKey = '6OYBENRW75CQHHNZ'
-  const apiKey2 = 'BYBIX6SQ25IPZAUH'
+  const apiKey = ''
+  const apiKey2 = ''
   const interval = '60min'
   const getStock = () => {
           fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`)
@@ -55,7 +56,7 @@ function App() {
     fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "7f1f9f12f0mshb61724ebaadc332p1f6658jsnd12fd2c73285",
+        "x-rapidapi-key": "",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
   }
 })
@@ -72,7 +73,7 @@ const getYahooNews = () => {
   fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US", {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "7f1f9f12f0mshb61724ebaadc332p1f6658jsnd12fd2c73285",
+      "x-rapidapi-key": "",
       "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
 }
 })
